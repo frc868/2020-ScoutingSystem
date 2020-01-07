@@ -49,9 +49,7 @@
 					<div class="row">
 						<div class="tab-content col-md-10 col-sm-10">
 							<div class="tab-pane active" id="a">
-								<h4 class="panel-title h4">
-									Pregame
-								</h4>
+								<h4 class="panel-title h4">Pregame</h4>
 								<div class="panel-body">
 									<p>Match Qualification # Here:</p>
 									<input type="number" class="textbox" id="matchType" onKeyPress="if(this.value.length==3) return false;" onKeyUp="submit2()" min="0" max = "999"/>
@@ -59,6 +57,13 @@
 									</br>
 									<p>Enter Team # Here:</p>
 									<input type="number" class="textbox" id="number" onKeyPress="if(this.value.length==5) return false;" onKeyUp="submit1()" min="0" max = "99999"/>
+									</br>
+									</br>
+									<p>Number of Power Cells That Have Been Preloaded</p>
+									<input type="radio" name="numOfCells" value="0">0
+									<input type="radio" name="numOfCells" value="1">1
+									<input type="radio" name="numOfCells" value="2">2
+									<input type="radio" name="numOfCells" value="3">3
 								</div>
 							</div>
 							
