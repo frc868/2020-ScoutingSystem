@@ -20,14 +20,14 @@
 		<script src="js/scoutingMain.js"></script>
 		<script src="js/matchTeams.js"></script>
 		<script src="js/index.js"></script>
-		<title>2019 Scouting System</title>
+		<title>2020 Scouting System</title>
 	</head>
 	<body onload="startTimer()">
 		<div style = "padding-top: 1em;">
 			<div class="tabbable">
 				<ul class="nav nav-pills nav-stacked col-md-2 col-sm-2">
 					<li class="active"><a href="#a" data-toggle="tab">Pre-Game</a></li>
-					<li><a href="#b" data-toggle="tab">Pregame</a></li>
+					<li><a href="#b" data-toggle="tab">Auton</a></li>
 					<li><a href="#c" data-toggle="tab">Tele-Op</a></li>
 					<li><a href="#d" data-toggle="tab">Endgame</a></li>
 					<li><a href="#e" data-toggle="tab">Submit</a></li>
@@ -79,6 +79,7 @@
 								<h4 class="panel-title h4">Endgame</h4>
 								<div class="panel-body">
 									<input type = "checkBox">Rendezvous Point</input>
+									<br></br>
 									<input type = "checkBox" onClick = "climbAttempt()">Climb Attempt</input>
 									<input type = "checkBox" id = "climbS" disabled>Success</input>
 									<input type = "checkBox" id = "climbF" disabled>Failure</input>
