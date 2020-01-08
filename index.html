@@ -13,25 +13,37 @@
 
 		<div class="container-fluid" style = "width: 95%">
 			<ul class="nav nav-pills">
-				<li class="active"><a data-toggle="tab" href="#pregame">pregame</a></li>
-				<li><a data-toggle="tab" href="#midgame">midgame</a></li>
-				<li><a data-toggle="tab" href="#endgame">endgame</a></li>
-				<li><a data-toggle="tab" href="#submit">submit</a></li>
+				<li class="active"><a data-toggle="tab" href="#pregame">Pregame</a></li>
+				<li><a data-toggle="tab" href="#midgame">Tele-Op</a></li>
+				<li><a data-toggle="tab" href="#endgame">Endgame</a></li>
+				<li><a data-toggle="tab" href="#submit">Submit</a></li>
 			</ul>
 
 			<div class="tab-content">
 				<div id="pregame" class="tab-pane fade in active">
-					<h3>pregame</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<h3>Pregame</h3>
+					<p>Match Qualification # Here:</p>
+					<input type="number" class="textbox" id="matchType" onKeyPress="if(this.value.length==3) return false;" onKeyUp="submit2()" min="0" max = "999"/>
+					</br>
+					</br>
+					<p>Enter Team # Here:</p>
+					<input type="number" class="textbox" id="number" onKeyPress="if(this.value.length==5) return false;" onKeyUp="submit1()" min="0" max = "99999"/>
+					</br>
+					</br>
+					<p>Number of Power Cells That Have Been Preloaded</p>
+					<input type="radio" name="numOfCells" value="0">0
+					<input type="radio" name="numOfCells" value="1">1
+					<input type="radio" name="numOfCells" value="2">2
+					<input type="radio" name="numOfCells" value="3">3
 				</div>
 				
 				<div id="midgame" class="tab-pane fade">
-					<h3>midgame</h3>
+					<h3>Tele-Op</h3>
 					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 				</div>
 				
 				<div id="endgame" class="tab-pane fade">
-					<h4 class="panel-title h4">endgame</h4>
+					<h4 class="panel-title h4">Endgame</h4>
 						<input type = "checkBox">Rendezvous Point</input>
 						<br></br>
 						<input type = "checkBox" onClick = "climbAttempt()">Climb Attempt</input>
