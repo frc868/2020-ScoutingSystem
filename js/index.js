@@ -17,8 +17,8 @@ powercellsTopScore = 0;
 ‪park = false;
 ‪comments = false;
 
-//Endgame
+//Endgame (THIS YEAR)
 function climbAttempt() {
 	document.getElementById('climbS').disabled = false;
 	document.getElementById('climbF').disabled = false;
-}
+} 

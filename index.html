@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+<<<<<<< HEAD
 		<title>Bootstrap Example</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,13 +32,28 @@
 				</div>
 				
 				<div id="b" class="tab-pane fade">
-					<h3>Menu 2</h3>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+					<h4 class="panel-title h4">Endgame</h4>
+						<input type = "checkBox">Rendezvous Point</input>
+						<br></br>
+						<input type = "checkBox" onClick = "climbAttempt()">Climb Attempt</input>
+						<input type = "checkBox" id = "climbS" disabled>Success</input>
+						<input type = "checkBox" id = "climbF" disabled>Failure</input>
 				</div>
 				
 				<div id="c" class="tab-pane fade">
-					<h3>Menu 3</h3>
-					<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+					<form>
+						<textarea id="words" rows="5" cols="80"></textarea>
+						<input class="buttonsubmit" type="submit" value="Submit" /> <br>
+						<p id="para"></p>
+					</form>
+
+					<script type="text/javascript">
+						function getwords() {
+							text = words.value;
+							document.getElementById("para").innerHTML += '<h1>'+text
+							document.getElementById("words").value = ""
+						}
+					</script>
 				</div>
 			</div>
 		</div>
