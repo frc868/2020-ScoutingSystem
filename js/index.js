@@ -16,3 +16,9 @@ powercellsTopScore = 0;
 ‪climb = false;
 ‪park = false;
 ‪comments = false;
+
+//Endgame
+function climbAttempt() {
+	document.getElementById('climbS').disabled = false;
+	document.getElementById('climbF').disabled = false;
+}
