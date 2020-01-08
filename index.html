@@ -88,6 +88,21 @@
 							
 							<div class="tab-pane" id="e">
 								<h4 class="panel-title h4">Submit</h4>
+								<div class="panel-body" id="review">
+									<form>
+										<textarea id="words" rows="5" cols="80"></textarea>
+										<input class="buttonsubmit" type="submit" value="Submit" /> <br>
+										<p id="para"></p>
+									</form>
+
+									<script type="text/javascript">
+										function getwords() {
+											text = words.value;
+											document.getElementById("para").innerHTML += '<h1>'+text
+											document.getElementById("words").value = ""
+										}
+									</script>
+								</div>
 							</div>
 						</div>
 					</div>
