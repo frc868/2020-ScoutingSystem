@@ -1,0 +1,21 @@
+‪Name         |    Description     | Type‬
+‪----------------------------------------------‬
+‪primaryId | Auto incrementing Id | primaryKey autoIncrementing int‬
+‪compId | Competition Id | int ‬
+‪teamNo | Team number | int‬
+‪matchNo | Match number | int‬
+‪preload | Amount of Power Cells the robot is preloaded with | int‬
+‪moveStart | did they move at the start of the match | boolean‬
+‪powercellsBotScore | power cells scored in bottom | int‬
+‪powercellsTopScore | power cells scored in top | int ‬
+‪powercellsInScore | power cells scored in the inner circle | int‬
+‪powercellsBotAttempt | power cells shot at bottom | int ‬
+‪powercellsTopAttempt | power cells shot at top | int ‬
+‪powercellsInAttempt | power cells shot at the inner circle | int‬
+‪revolutionsCheck | did they get the right amount of spins on control wheel | boolean‬
+‪colorCheck | did they get the correct color on the control wheel | boolean‬
+‪climb | did the robot succesfully climb/hang on the bar | boolean ‬
+‪park | did the robot park at the end of match | boolean‬
+‪comments | comments | longText‬
+
+‪variable descriptions and stuffs‬
