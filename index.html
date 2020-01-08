@@ -1,98 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<link rel="stylesheet" href="index.css">
-		<script src="index.js"></script>
+		<title>Bootstrap Example</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	</head>
 	
 	<body>
-		
-	</body>
-</html>
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" href="css/index.css">
-		<link rel="stylesheet" href="css/bootstrap.css">
-		<link rel="stylesheet" href="css/style.css">
-		<script src="js/jquery.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="js/scoutingMain.js"></script>
-		<script src="js/matchTeams.js"></script>
-		<script src="js/index.js"></script>
-		<title>2020 Scouting System</title>
-	</head>
-	<body onload="startTimer()">
-		<div style = "padding-top: 1em;">
-			<div class="tabbable">
-				<ul class="nav nav-pills nav-stacked col-md-2 col-sm-2">
-					<li class="active"><a href="#a" data-toggle="tab">Pre-Game</a></li>
-					<li><a href="#b" data-toggle="tab">Auton</a></li>
-					<li><a href="#c" data-toggle="tab">Tele-Op</a></li>
-					<li><a href="#d" data-toggle="tab">Endgame</a></li>
-					<li><a href="#e" data-toggle="tab">Submit</a></li>
-					<div style="bottom: 5em; left: 0em;" class = "teamnumber">
-						<font color="black" size="2.25em">
-							<p style="padding-top: .3125em">Team Number</p>
-							<p style="padding-bottom: .3125em; margin-bottom: 0em" id="name"></p>
-						</font>
-					</div>
-					<div style="bottom: 0em; left: 0em;" class = "teamnumber">
-						<font color="black" size="2.1875em">
-							<p style="padding-top: .3125em">Match Qualification #:</p>
-							<p style="padding-bottom: .3125em; margin-bottom: 0em" id="match"></p>
-						</font>
-					</div>
-				</ul>
+
+		<div class="container-fluid" style = "width: 95%">
+			<ul class="nav nav-pills">
+				<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+				<li><a data-toggle="tab" href="#a">Menu 1</a></li>
+				<li><a data-toggle="tab" href="#b">Menu 2</a></li>
+				<li><a data-toggle="tab" href="#c">Menu 3</a></li>
+			</ul>
+
+			<div class="tab-content">
+				<div id="home" class="tab-pane fade in active">
+					<h3>HOME</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
 				
-				<div class="container">
-					<div class="row">
-						<div class="tab-content col-md-10 col-sm-10">
-							<div class="tab-pane active" id="a">
-								<h4 class="panel-title h4">Pregame</h4>
-								<div class="panel-body">
-									<p>Match Qualification # Here:</p>
-									<input type="number" class="textbox" id="matchType" onKeyPress="if(this.value.length==3) return false;" onKeyUp="submit2()" min="0" max = "999"/>
-									</br>
-									</br>
-									<p>Enter Team # Here:</p>
-									<input type="number" class="textbox" id="number" onKeyPress="if(this.value.length==5) return false;" onKeyUp="submit1()" min="0" max = "99999"/>
-									</br>
-									</br>
-									<p>Number of Power Cells That Have Been Preloaded</p>
-									<input type="radio" name="numOfCells" value="0">0
-									<input type="radio" name="numOfCells" value="1">1
-									<input type="radio" name="numOfCells" value="2">2
-									<input type="radio" name="numOfCells" value="3">3
-								</div>
-							</div>
-							
-							<div class="tab-pane" id="b">
-								<h4 class="panel-title h4">Auton Period</h4>
-							</div>
-							
-							<div class="tab-pane" id="c">
-								<h1 class="panel-title h4"><center>Tele-Op</center></h1>
-							</div>
-							
-							<div class="tab-pane" id="d">
-								<h4 class="panel-title h4">Endgame</h4>
-								<div class="panel-body">
-									<input type = "checkBox">Rendezvous Point</input>
-									<br></br>
-									<input type = "checkBox" onClick = "climbAttempt()">Climb Attempt</input>
-									<input type = "checkBox" id = "climbS" disabled>Success</input>
-									<input type = "checkBox" id = "climbF" disabled>Failure</input>
-								</div>
-							</div>
-							
-							<div class="tab-pane" id="e">
-								<h4 class="panel-title h4">Submit</h4>
-							</div>
-						</div>
-					</div>
+				<div id="a" class="tab-pane fade">
+					<h3>Menu 1</h3>
+					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+				
+				<div id="b" class="tab-pane fade">
+					<h3>Menu 2</h3>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+				</div>
+				
+				<div id="c" class="tab-pane fade">
+					<h3>Menu 3</h3>
+					<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 				</div>
 			</div>
 		</div>
+
 	</body>
 </html>
