@@ -1,4 +1,18 @@
-function climbAttempt() {
-	document.getElementById('climbS').disabled = false;
-	document.getElementById('climbF').disabled = false;
-}
+var primaryId;
+‪var compId, teamNo, matchNo, preload, moveStart, powercellsBotScore, powercellsTopScore, powercellsInScore, powercellsBotAttempt, powercellsTopAttempt, powercellsInAttempt, revolutionsCheck, colorCheck, climb, park, comments;
+‪compId = 0;
+teamNo = 0;
+matchNo = 0;
+preload = 0;
+moveStart = false;
+powercellsBotScore = 0;
+powercellsTopScore = 0;
+‪powercellsInScore = 0;
+‪powercellsBotAttempt = 0;
+‪powercellsTopAttempt = 0;
+‪powercellsInAttempt = 0;
+‪revolutionsCheck = 0;
+‪colorCheck = false;
+‪climb = false;
+‪park = false;
+‪comments = false;
