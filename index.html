@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Bootstrap Example</title>
+		<title>Scouting System 2020</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -9,9 +9,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<script src="js/index.js"></script>
 	</head>
-	
 	<body>
-
 		<div class="container-fluid" style = "width: 95%">
 			<ul class="nav nav-pills">
 				<li class="active"><a data-toggle="tab" href="#pregame">Pregame</a></li>
@@ -41,35 +39,41 @@
 				</div>
 				
 				<div id="midgame" class="tab-pane fade">
+<<<<<<< HEAD
+					<h3>Tele-Op</h3>
+					<p></p>
+=======
 					<h3 onclick="toggleMidgame()">Tele-Op</h3>
 					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+>>>>>>> 7f44e459190d73d08e495f0cd92341edc3915368
 					<div class="container">
 						<center>
 							<div class="row">
-								<div class="col-md-6 bg-info border border-primary">
+								<div style="border-style: solid; " class="col-md-6 bg-info border border-primary">
 									top goal
 								</div>
-								<div class="col-md-4 bg-info border border-primary">
+								<div style="border-style: solid;" class="col-md-4 bg-info border border-primary">
 									bottom goal
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-2 bg-info border border-primary">
+								<div style="border-style: solid;" class="col-md-2 bg-info border border-primary">
 									inner
 								</div>
-								<div class="col-md-2 bg-info border border-primary">
+								<div style="border-style: solid;" class="col-md-2 bg-info border border-primary">
 									outer
 								</div>
-								<div class="col-md-2 bg-info border border-primary">
+								<div style="border-style: solid;" class="col-md-2 bg-info border border-primary">
 									miss
 								</div>
-								<div class="col-md-2 bg-info border border-primary">
+								<div style="border-style: solid;" class="col-md-2 bg-info border border-primary">
 									made
 								</div>
-								<div class="col-md-2 bg-info border border-primary">
+								<div style="border-style: solid;" class="col-md-2 bg-info border border-primary">
 									miss
 								</div>
 							</div>
+							<br>
 							<div class="row">
 								<div class="col-md-2">
 									<button type="button" class="btn btn-success" id = "buttonUp1" value = "1" onclick = "counterClick(this.id);">+1</button>
@@ -141,7 +145,7 @@
 						</center>
 					</div>
 				</div>
-				
+			
 				<div id="endgame" style = "font-size: 150%;" class="tab-pane fade">
 					<h3>Endgame</h3>
 					<input type = "checkBox" style = "transform: scale(2);" onClick = "renPoint();">  Rendezvous Point</input>
@@ -155,7 +159,7 @@
 				
 				<div id="submit" class="tab-pane fade">
 					<form>
-						<textarea id="words" rows="5" cols="80"></textarea>
+						<textarea value="comments" id="words" rows="5" cols="80"></textarea>
 						<input class="buttonsubmit" type="submit" value="Submit" /> <br>
 						<p id="para"></p>
 					</form>
