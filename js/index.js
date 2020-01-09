@@ -11,11 +11,13 @@ powercellsTopScore = 0;
 ‪powercellsBotAttempt = 0;
 ‪powercellsTopAttempt = 0;
 ‪powercellsInAttempt = 0;
-‪revolutionsCheck = 0;
+‪revolutionsCheck = false;
 ‪colorCheck = false;
 ‪climb = false;
 ‪park = false;
-‪comments = false;
+
+var counters = [document.getElementById("counter1"), document.getElementById("counter2"), document.getElementById("counter3"), document.getElementById("counter4"), document.getElementById("counter5")]
+
 
 //Endgame (THIS YEAR)
 function climbAttempt() {
