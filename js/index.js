@@ -39,5 +39,17 @@ function climbAttempt() {
 }
 
 function powerCellCounter0() {
-	var preload = document.getElementById('powerCell0').value;
+	preload = document.getElementById('powerCell0').value;
+}
+
+function powerCellCounter1() {
+	preload = document.getElementById('powerCell1').value;
+}
+
+function powerCellCounter2() {
+	preload = document.getElementById('powerCell2').value;
+}
+
+function powerCellCounter3() {
+	preload = document.getElementById('powerCell3').value;
 }
