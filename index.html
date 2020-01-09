@@ -9,9 +9,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<script src="js/index.js"></script>
 	</head>
-	
 	<body>
-
 		<div class="container-fluid" style = "width: 95%">
 			<ul class="nav nav-pills">
 				<li class="active"><a data-toggle="tab" href="#pregame">Pregame</a></li>
@@ -42,7 +40,7 @@
 				
 				<div id="midgame" class="tab-pane fade">
 					<h3>Tele-Op</h3>
-					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<p></p>
 					<div class="container">
 						<center>
 							<div class="row">
@@ -144,9 +142,10 @@
 				</div>
 				
 				<div id="endgame" class="tab-pane fade">
-					<h4 class="panel-title h4">Endgame</h4>
+					<h3>Endgame</h3>
+					<p></p>
 					<input type = "checkBox">Rendezvous Point</input>
-					<br></br>
+					<br>
 					<input type = "checkBox" id = "climbA" onClick = "climbAttempt()">Climb Attempt</input>
 					<input type = "checkBox" id = "climbS" disabled>Success</input>
 					<input type = "checkBox" id = "climbF" disabled>Failure</input>
@@ -164,7 +163,7 @@
 				
 				<div id="submit" class="tab-pane fade">
 					<form>
-						<textarea id="words" rows="5" cols="80"></textarea>
+						<textarea value="comments" id="words" rows="5" cols="80"></textarea>
 						<input class="buttonsubmit" type="submit" value="Submit" /> <br>
 						<p id="para"></p>
 					</form>
