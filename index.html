@@ -41,7 +41,7 @@
 				</div>
 				
 				<div id="midgame" class="tab-pane fade">
-					<h3>Tele-Op</h3>
+					<h3 onclick="toggleMidgame()">Tele-Op</h3>
 					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					<div class="container">
 						<center>
@@ -154,9 +154,10 @@
 						function climbAttempt() {
 							document.getElementById('climbS').disabled = false;
 							document.getElementById('climbF').disabled = false;
-							if document.getElementById('climbA').checked == true;
+							if (document.getElementById('climbA').checked == true) {
 								document.getElementById('climbS').disabled = true;
 								document.getElementById('climbF').disabled = true;
+							}
 						}
 					</script>
 				</div>
