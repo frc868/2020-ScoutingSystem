@@ -1,5 +1,5 @@
 var primaryId;
-‪var compId, teamNo, matchNo, preload, moveStart, powercellsBotScore, powercellsTopScore, powercellsInScore, powercellsBotAttempt, powercellsTopAttempt, powercellsInAttempt, revolutionsCheck, colorCheck, climb, park, comments;
+‪var compId teamNo, matchNo, preload, moveStart, powercellsBotScore, powercellsTopScore, powercellsInScore, powercellsBotAttempt, powercellsTopAttempt, powercellsInAttempt, revolutionsCheck, colorCheck, climb, park, comments;
 ‪compId = 0;
 teamNo = 0;
 matchNo = 0;
@@ -21,4 +21,9 @@ powercellsTopScore = 0;
 function climbAttempt() {
 	document.getElementById('climbS').disabled = false;
 	document.getElementById('climbF').disabled = false;
-} 
+}
+
+function powerCellCounter0() {
+	var preload = document.getElementById('powerCell0').value;
+	document.getElementById('test').innerHTML = preload;
+}

@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script src="js/index.js"></script>
 	</head>
 	
 	<body>
@@ -31,10 +32,12 @@
 					</br>
 					</br>
 					<p>Number of Power Cells That Have Been Preloaded</p>
-					<input type="radio" name="numOfCells" value="0">0
-					<input type="radio" name="numOfCells" value="1">1
-					<input type="radio" name="numOfCells" value="2">2
-					<input type="radio" name="numOfCells" value="3">3
+					<input type="radio" name="numOfCells" id="powerCell0" onClick="powerCellCounter0()" value="0">0</input>
+					<input type="radio" name="numOfCells" id="powerCell1" onClick="powerCellCounter1()" value="1">1</input>
+					<input type="radio" name="numOfCells" id="powerCell2" onClick="powerCellCounter2()" value="2">2</input>
+					<input type="radio" name="numOfCells" id="powerCell3" onClick="powerCellCounter3()" value="3">3</input>
+					</br>
+					<div id="test"><p></p></div>
 				</div>
 				
 				<div id="midgame" class="tab-pane fade">
