@@ -25,9 +25,17 @@ pcTeleopTopScore = 0;
 ‪climb = false;
 ‪park = false;
 
-var counters = [document.getElementById("counter1"), document.getElementById("counter2"), document.getElementById("counter3"), document.getElementById("counter4"), document.getElementById("counter5")];
-var autonCounters = []
-var teleopCounters = []
+var auton = true;
+var autonCounters = [document.getElementById("auton1"), document.getElementById("auton2"), document.getElementById("auton3"), document.getElementById("auton4"), document.getElementById("auton5")];
+var teleopCounters = [document.getElementById("teleop1"), document.getElementById("teleop2"), document.getElementById("teleop3"), document.getElementById("teleop4"), document.getElementById("teleop5")];
+
+function toggleMidgame() {
+	auton = !auton;
+	if (auton) {
+		document.getElementById("autonRow").style.display = "none";
+	}
+}
+
 var autonVars = [pcAutonBotScore, pcAutonTopScore, pcAutonInScore, pcAutonBotAttempt, pcAutonTopAttempt, pcAutonInAttempt];
 var teleopVars = [pcTeleopBotScore, pcTeleopTopScore, pcTeleopInScore, pcTeleopBotAttempt, pcTeleopTopAttempt, pcTeleopInAttempt];
 
