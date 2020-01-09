@@ -195,6 +195,9 @@ var teleopVars = [pcTeleopBotScore, pcTeleopTopScore, pcTeleopInScore, pcTeleopB
 
 
 //Endgame (THIS YEAR)
+function renPoint() {
+	document.getElementById('climbA').disabled = false;
+}
 function climbAttempt() {
 	document.getElementById('climbS').disabled = false;
 	document.getElementById('climbF').disabled = false;
