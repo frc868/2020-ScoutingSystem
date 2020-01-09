@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script src="js/index.js"></script>
 	</head>
 	
 	<body>
@@ -31,10 +32,12 @@
 					</br>
 					</br>
 					<p>Number of Power Cells That Have Been Preloaded</p>
-					<input type="radio" name="numOfCells" value="0">0
-					<input type="radio" name="numOfCells" value="1">1
-					<input type="radio" name="numOfCells" value="2">2
-					<input type="radio" name="numOfCells" value="3">3
+					<input type="radio" name="numOfCells" id="powerCell0" onClick="powerCellCounter0()" value="0">0</input>
+					<input type="radio" name="numOfCells" id="powerCell1" onClick="powerCellCounter1()" value="1">1</input>
+					<input type="radio" name="numOfCells" id="powerCell2" onClick="powerCellCounter2()" value="2">2</input>
+					<input type="radio" name="numOfCells" id="powerCell3" onClick="powerCellCounter3()" value="3">3</input>
+					</br>
+					<div id="test"><p></p></div>
 				</div>
 				
 				<div id="midgame" class="tab-pane fade">
@@ -85,7 +88,7 @@
 									<button type="button" class="btn btn-success">+1</button>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row" id="autonRow">
 								<div class="col-md-2" id="auton1">
 									a
 								</div>
@@ -102,7 +105,7 @@
 									e
 								</div>
 							</div>
-							<div class="row">
+							<div class="row" id="teleopRow">
 								<div class="col-md-2" id="teleop1">
 									a
 								</div>
@@ -144,7 +147,7 @@
 					<h4 class="panel-title h4">Endgame</h4>
 					<input type = "checkBox">Rendezvous Point</input>
 					<br></br>
-					<input type = "checkBox" onClick = "climbAttempt()">Climb Attempt</input>
+					<input type = "checkBox" id = "climbA" onClick = "climbAttempt()">Climb Attempt</input>
 					<input type = "checkBox" id = "climbS" disabled>Success</input>
 					<input type = "checkBox" id = "climbF" disabled>Failure</input>
 					<script type = "text/javascript">
@@ -152,6 +155,9 @@
 						function climbAttempt() {
 							document.getElementById('climbS').disabled = false;
 							document.getElementById('climbF').disabled = false;
+							if document.getElementById('climbA').checked == true;
+								document.getElementById('climbS').disabled = true;
+								document.getElementById('climbF').disabled = true;
 						}
 					</script>
 				</div>

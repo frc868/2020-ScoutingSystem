@@ -1,5 +1,5 @@
 var primaryId;
-‪var compId, teamNo, matchNo, preload, moveStart, powercellsBotScore, powercellsTopScore, powercellsInScore, powercellsBotAttempt, powercellsTopAttempt, powercellsInAttempt, revolutionsCheck, colorCheck, climb, park, comments;
+‪var compId teamNo, matchNo, preload, moveStart, powercellsBotScore, powercellsTopScore, powercellsInScore, powercellsBotAttempt, powercellsTopAttempt, powercellsInAttempt, revolutionsCheck, colorCheck, climb, park, comments;
 ‪compId = 0;
 teamNo = 0;
 matchNo = 0;
@@ -25,9 +25,17 @@ pcTeleopTopScore = 0;
 ‪climb = false;
 ‪park = false;
 
-var counters = [document.getElementById("counter1"), document.getElementById("counter2"), document.getElementById("counter3"), document.getElementById("counter4"), document.getElementById("counter5")];
-var autonCounters = []
-var teleopCounters = []
+var auton = true;
+var autonCounters = [document.getElementById("auton1"), document.getElementById("auton2"), document.getElementById("auton3"), document.getElementById("auton4"), document.getElementById("auton5")];
+var teleopCounters = [document.getElementById("teleop1"), document.getElementById("teleop2"), document.getElementById("teleop3"), document.getElementById("teleop4"), document.getElementById("teleop5")];
+
+function toggleMidgame() {
+	auton = !auton;
+	if (auton) {
+		document.getElementById("autonRow").style.display = "none";
+	}
+}
+
 var autonVars = [pcAutonBotScore, pcAutonTopScore, pcAutonInScore, pcAutonBotAttempt, pcAutonTopAttempt, pcAutonInAttempt];
 var teleopVars = [pcTeleopBotScore, pcTeleopTopScore, pcTeleopInScore, pcTeleopBotAttempt, pcTeleopTopAttempt, pcTeleopInAttempt];
 
@@ -36,4 +44,20 @@ var teleopVars = [pcTeleopBotScore, pcTeleopTopScore, pcTeleopInScore, pcTeleopB
 function climbAttempt() {
 	document.getElementById('climbS').disabled = false;
 	document.getElementById('climbF').disabled = false;
+}
+
+function powerCellCounter0() {
+	preload = document.getElementById('powerCell0').value;
+}
+
+function powerCellCounter1() {
+	preload = document.getElementById('powerCell1').value;
+}
+
+function powerCellCounter2() {
+	preload = document.getElementById('powerCell2').value;
+}
+
+function powerCellCounter3() {
+	preload = document.getElementById('powerCell3').value;
 }
