@@ -61,10 +61,24 @@ var teleopVars = [pcTeleopBotScore, pcTeleopTopScore, pcTeleopInScore, pcTeleopB
 //Endgame (THIS YEAR)
 function renPoint() {
 	document.getElementById('climbA').disabled = false;
+	if (document.getElementById('ren').checked == false) {
+		document.getElementById('climbA').disabled = true;
+		document.getElementById('climbS').disabled = true;
+		document.getElementById('climbF').disabled = true;
+		document.getElementById('climbA').checked = false;
+		document.getElementById('climbS').checked = false;
+		document.getElementById('climbF').checked = false;
+	}
 }
 function climbAttempt() {
 	document.getElementById('climbS').disabled = false;
 	document.getElementById('climbF').disabled = false;
+	if (document.getElementById('climbA').checked == false) {
+		document.getElementById('climbS').disabled = true;
+		document.getElementById('climbF').disabled = true;
+		document.getElementById('climbS').checked = false;
+		document.getElementById('climbF').checked = false;
+	}
 }
 
 function powerCellCounter0() {
