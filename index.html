@@ -39,8 +39,13 @@
 				</div>
 				
 				<div id="midgame" class="tab-pane fade">
+<<<<<<< HEAD
 					<h3>Tele-Op</h3>
 					<p></p>
+=======
+					<h3 onclick="toggleMidgame()">Tele-Op</h3>
+					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+>>>>>>> 7f44e459190d73d08e495f0cd92341edc3915368
 					<div class="container">
 						<center>
 							<div class="row">
@@ -140,25 +145,16 @@
 						</center>
 					</div>
 				</div>
-				
-				<div id="endgame" class="tab-pane fade">
+			
+				<div id="endgame" style = "font-size: 150%;" class="tab-pane fade">
 					<h3>Endgame</h3>
-					<p></p>
-					<input type = "checkBox">Rendezvous Point</input>
-					<br>
-					<input type = "checkBox" id = "climbA" onClick = "climbAttempt()">Climb Attempt</input>
-					<input type = "checkBox" id = "climbS" disabled>Success</input>
-					<input type = "checkBox" id = "climbF" disabled>Failure</input>
-					<script type = "text/javascript">
-						//put this here because the js is messed up
-						function climbAttempt() {
-							document.getElementById('climbS').disabled = false;
-							document.getElementById('climbF').disabled = false;
-							if document.getElementById('climbA').checked == true;
-								document.getElementById('climbS').disabled = true;
-								document.getElementById('climbF').disabled = true;
-						}
-					</script>
+					<input type = "checkBox" style = "transform: scale(2);" onClick = "renPoint();">  Rendezvous Point</input>
+					<br></br>
+					<input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input>
+					<br></br>
+					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" disabled> Success</input>
+					<br></br>
+					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" disabled>  Failure</input>
 				</div>
 				
 				<div id="submit" class="tab-pane fade">
