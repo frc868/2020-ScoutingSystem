@@ -23,4 +23,4 @@ var counters = [document.getElementById("counter1"), document.getElementById("co
 function climbAttempt() {
 	document.getElementById('climbS').disabled = false;
 	document.getElementById('climbF').disabled = false;
-} 
+}

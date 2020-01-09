@@ -124,11 +124,18 @@
 				
 				<div id="endgame" class="tab-pane fade">
 					<h4 class="panel-title h4">Endgame</h4>
-						<input type = "checkBox">Rendezvous Point</input>
-						<br></br>
-						<input type = "checkBox" onClick = "climbAttempt()">Climb Attempt</input>
-						<input type = "checkBox" id = "climbS" disabled>Success</input>
-						<input type = "checkBox" id = "climbF" disabled>Failure</input>
+					<input type = "checkBox">Rendezvous Point</input>
+					<br></br>
+					<input type = "checkBox" onClick = "climbAttempt()">Climb Attempt</input>
+					<input type = "checkBox" id = "climbS" disabled>Success</input>
+					<input type = "checkBox" id = "climbF" disabled>Failure</input>
+					<script type = "text/javascript">
+						//put this here because the js is messed up
+						function climbAttempt() {
+							document.getElementById('climbS').disabled = false;
+							document.getElementById('climbF').disabled = false;
+						}
+					</script>
 				</div>
 				
 				<div id="submit" class="tab-pane fade">
