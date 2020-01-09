@@ -142,13 +142,15 @@
 					</div>
 				</div>
 				
-				<div id="endgame" class="tab-pane fade">
-					<h4 class="panel-title h4">Endgame</h4>
-					<input type = "checkBox">Rendezvous Point</input>
+				<div id="endgame" style = "font-size: 150%;" class="tab-pane fade">
+					<h3>Endgame</h3>
+					<input type = "checkBox" style = "transform: scale(2);" >  Rendezvous Point</input>
 					<br></br>
-					<input type = "checkBox" id = "climbA" onClick = "climbAttempt()">Climb Attempt</input>
-					<input type = "checkBox" id = "climbS" disabled>Success</input>
-					<input type = "checkBox" id = "climbF" disabled>Failure</input>
+					<input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()">  Climb Attempt</input>
+					<br></br>
+					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" disabled> Success</input>
+					<br></br>
+					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" disabled>  Failure</input>
 					<script type = "text/javascript">
 						//put this here because the js is messed up
 						function climbAttempt() {
