@@ -32,6 +32,7 @@ var autonCounters = [document.getElementById("auton1"), document.getElementById(
 var teleopCounters = [document.getElementById("teleop1"), document.getElementById("teleop2"), document.getElementById("teleop3"), document.getElementById("teleop4"), document.getElementById("teleop5")];
 
 function toggleMidgame() {
+	console.log("toggled");
 	auton = !auton;
 	if (auton) {
 		document.getElementById("autonRow").style.display = "block";
@@ -45,12 +46,147 @@ function toggleMidgame() {
 	}
 }
 
-function counterClick(button) {
-	if (button > 0) {
-		currentCounters[button].innerHTML = parseInt(currentCounters[button].innerHTML) += 1;
-	}
-	else {
-		currentCounters[button *= -1].innerHTML = parseInt(currentCounters[button].innerHTML) -= 1;
+function counterClick(clickedId) {
+	switch (clickedId) {
+		case "buttonUp1":
+			if (auton) {
+				var test = document.getElementById('auton1');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop1');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			}
+			break;
+			
+		case "buttonUp2":
+			if (auton) {
+				var test = document.getElementById('auton2');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop2');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			}
+			break;
+			
+		case "buttonUp3":
+			if (auton) {
+				var test = document.getElementById('auton3');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop3');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			}
+			break;
+		
+		case "buttonUp4":
+			if (auton) {
+				var test = document.getElementById('auton4');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop4');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			}
+			break;
+			
+		case "buttonUp5":
+			if (auton) {
+				var test = document.getElementById('auton5');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop5');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			}
+			break;
+			
+		case "buttonDown1":
+			if (auton) {
+				var test = document.getElementById('auton1');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop1');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+			}
+			break;
+			
+		case "buttonDown2":
+			if (auton) {
+				var test = document.getElementById('auton2');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop2');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+			}
+			break;
+			
+		case "buttonDown3":
+			if (auton) {
+				var test = document.getElementById('auton3');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop3');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+			}
+			break;
+			
+		case "buttonDown4":
+			if (auton) {
+				var test = document.getElementById('auton4');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop4');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+			}
+			break;
+			
+		case "buttonDown5":
+			if (auton) {
+				var test = document.getElementById('auton5');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop5');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+			}
+			break;
 	}
 }
 
