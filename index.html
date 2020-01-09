@@ -13,24 +13,99 @@
 
 		<div class="container-fluid" style = "width: 95%">
 			<ul class="nav nav-pills">
-				<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-				<li><a data-toggle="tab" href="#a">Menu 1</a></li>
-				<li><a data-toggle="tab" href="#b">Menu 2</a></li>
-				<li><a data-toggle="tab" href="#c">Menu 3</a></li>
+				<li class="active"><a data-toggle="tab" href="#pregame">Pregame</a></li>
+				<li><a data-toggle="tab" href="#midgame">Tele-Op</a></li>
+				<li><a data-toggle="tab" href="#endgame">Endgame</a></li>
+				<li><a data-toggle="tab" href="#submit">Submit</a></li>
 			</ul>
 
 			<div class="tab-content">
-				<div id="home" class="tab-pane fade in active">
-					<h3>HOME</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<div id="pregame" class="tab-pane fade in active">
+					<h3>Pregame</h3>
+					<p>Match Qualification # Here:</p>
+					<input type="number" class="textbox" id="matchType" onKeyPress="if(this.value.length==3) return false;" onKeyUp="submit2()" min="0" max = "999"/>
+					</br>
+					</br>
+					<p>Enter Team # Here:</p>
+					<input type="number" class="textbox" id="number" onKeyPress="if(this.value.length==5) return false;" onKeyUp="submit1()" min="0" max = "99999"/>
+					</br>
+					</br>
+					<p>Number of Power Cells That Have Been Preloaded</p>
+					<input type="radio" name="numOfCells" value="0">0
+					<input type="radio" name="numOfCells" value="1">1
+					<input type="radio" name="numOfCells" value="2">2
+					<input type="radio" name="numOfCells" value="3">3
 				</div>
 				
-				<div id="a" class="tab-pane fade">
-					<h3>Menu 1</h3>
+				<div id="midgame" class="tab-pane fade">
+					<h3>Tele-Op</h3>
 					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<div class="container">
+						<center>
+							<div class="row">
+								<div class="col-md-6">
+									a
+								</div>
+								<div class="col-md-4">
+									b
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-2">
+									<button type="button" class="btn btn-success">+1</button>
+								</div>
+								<div class="col-md-2">
+									<button type="button" class="btn btn-success">+1</button>
+								</div>
+								<div class="col-md-2">
+									<button type="button" class="btn btn-success">+1</button>
+								</div>
+								<div class="col-md-2">
+									<button type="button" class="btn btn-success">+1</button>
+								</div>
+								<div class="col-md-2">
+									<button type="button" class="btn btn-success">+1</button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-2">
+									a
+								</div>
+								<div class="col-md-2">
+									b
+								</div>
+								<div class="col-md-2">
+									c
+								</div>
+								<div class="col-md-2">
+									d
+								</div>
+								<div class="col-md-2">
+									e
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-2">
+									<button type="button" class="btn btn-danger">-1</button>
+								</div>
+								<div class="col-md-2">
+									<button type="button" class="btn btn-danger">-1</button>
+								</div>
+								<div class="col-md-2">
+									<button type="button" class="btn btn-danger">-1</button>
+								</div>
+								<div class="col-md-2">
+									<button type="button" class="btn btn-danger">-1</button>
+								</div>
+								<div class="col-md-2">
+									<button type="button" class="btn btn-danger">-1</button>
+								</div>
+							</div>
+						</center>
+					</div>
 				</div>
 				
-				<div id="b" class="tab-pane fade">
+				<div id="endgame" class="tab-pane fade">
 					<h4 class="panel-title h4">Endgame</h4>
 						<input type = "checkBox">Rendezvous Point</input>
 						<br></br>
@@ -39,7 +114,7 @@
 						<input type = "checkBox" id = "climbF" disabled>Failure</input>
 				</div>
 				
-				<div id="c" class="tab-pane fade">
+				<div id="submit" class="tab-pane fade">
 					<form>
 						<textarea id="words" rows="5" cols="80"></textarea>
 						<input class="buttonsubmit" type="submit" value="Submit" /> <br>
