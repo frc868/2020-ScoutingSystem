@@ -144,24 +144,13 @@
 				
 				<div id="endgame" style = "font-size: 150%;" class="tab-pane fade">
 					<h3>Endgame</h3>
-					<input type = "checkBox" style = "transform: scale(2);" >  Rendezvous Point</input>
+					<input type = "checkBox" style = "transform: scale(2);" onClick = "renPoint();">  Rendezvous Point</input>
 					<br></br>
-					<input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()">  Climb Attempt</input>
+					<input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input>
 					<br></br>
 					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" disabled> Success</input>
 					<br></br>
 					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" disabled>  Failure</input>
-					<script type = "text/javascript">
-						//put this here because the js is messed up
-						function climbAttempt() {
-							document.getElementById('climbS').disabled = false;
-							document.getElementById('climbF').disabled = false;
-							if (document.getElementById('climbA').checked == true) {
-								document.getElementById('climbS').disabled = true;
-								document.getElementById('climbF').disabled = true;
-							}
-						}
-					</script>
 				</div>
 				
 				<div id="submit" class="tab-pane fade">
