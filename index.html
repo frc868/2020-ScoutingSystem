@@ -47,7 +47,7 @@
 					<h3 onclick="setVars()">Midgame</h3>
 					
 					<div onclick="toggleMidgame()">
-					<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="70" data-width="980" data-on="Tele-Op" data-off="Auton">
+					<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="50" data-width="200" data-on="Tele-Op" data-off="Auton">
 					</div>
 					
 					<div class="container" style = "padding-top: 2em;">
@@ -58,6 +58,22 @@
 								</div>
 								<div style="border-style: solid;" class="col-sm-4 bg-info border border-primary lead">
 									bottom goal
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-2 bg-info ">
+									<img src="innerport.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-info">
+									<img src="outerport.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-info ">
+									<img src="cross.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-info ">
+									<img src="botyes.png" height="100px" width= "100px">
+								</div><div class="col-sm-2 bg-info ">
+									<img src="botno.png" height="100px" width= "100px">
 								</div>
 							</div>
 							<div class="row">
@@ -79,20 +95,20 @@
 							</div>
 							<br>
 							<div class="row">
-								<div class="col-sm-2 border-left" style="border-left-style:solid">
-									<button type="button" style="width:150px; height:75px" class="btn btn-success" id = "buttonUp1" value = "1" onclick = "counterClick(this.id);">+1</button>
+								<div class="col-sm-2" style="border-left-style: solid;">
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp1" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
 								<div class="col-sm-2">
-									<button type="button" style="width:150px; height:75px" class="btn btn-success" id = "buttonUp2" value = "1" onclick = "counterClick(this.id);">+1</button>
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp2" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
 								<div class="col-sm-2">
-									<button type="button" style="width:150px; height:75px" class="btn btn-success" id = "buttonUp3" value = "1" onclick = "counterClick(this.id);">+1</button>
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp3" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
-								<div class="col-sm-2" style="border-left-style:solid">
-									<button type="button" style="width:150px; height:75px" class="btn btn-success" id = "buttonUp4" value = "1" onclick = "counterClick(this.id);">+1</button>
+								<div class="col-sm-2" style="border-left-style: solid;">
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp4" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
-								<div class="col-sm-2" style="border-right-style:solid">
-									<button type="button" style="width:150px; height:75px" class="btn btn-success" id = "buttonUp5" value = "1" onclick = "counterClick(this.id);">+1</button>
+								<div class="col-sm-2" style="border-right-style: solid;">
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp5" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
 							</div>
 							<div class="row" id="autonRow">
@@ -154,15 +170,26 @@
 					<h3>Endgame</h3>
 					<input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();">  Rendezvous Point</input>
 					<br></br>
+					<br></br>
 					<input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input>
+					<br></br>
 					<br></br>
 					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled> Success</input>
 					<br></br>
+					<br></br>
 					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled>  Failure</input>
 					<br></br>
-					<input type = "checkBox" id = "level" style = "transform: scale(2);">  Level?</input>
 					<br></br>
-					<input type = "number" id = "roboClimb" min = "0" max = "3">Number of Robots that Climbed</input>
+					<input type = "checkBox" id = "level" style = "transform: scale(2);">  Is the generator level?</input>
+					<br></br>
+					<br></br>
+					<p>Number of robots that climbed:</p>
+					<select id = "roboClimb">
+						<option value = "0">0</option>
+						<option value = "1">1</option>
+						<option value = "2">2</option>
+						<option value = "3">3</option>
+					</select>
 				</div>
 				
 				<div id="submit" padding: 15px 32px; style = "font-size: 150%;" class="tab-pane fade">
