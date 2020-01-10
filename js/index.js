@@ -6,18 +6,16 @@ var preload = 0;
 var moveStart = false;
 
 var pcAutonBotScore = 0;
-var pcAutonTopScore = 0;
+var pcAutonOutScore = 0;
 var pcAutonInScore = 0;
-var pcAutonBotAttempt = 0;
-var pcAutonTopAttempt = 0;
-var pcAutonInAttempt = 0;
+var pcAutonBotMiss = 0;
+var pcAutonTopMiss = 0;
 
 var pcTeleopBotScore = 0;
-var pcTeleopTopScore = 0;
+var pcTeleopOutScore = 0;
 var pcTeleopInScore = 0;
-var pcTeleopBotAttempt = 0;
-var pcTeleopTopAttempt = 0;
-var pcTeleopInAttempt = 0;
+var pcTeleopBotMiss = 0;
+var pcTeleopTopMiss = 0;
 
 var revolutionsCheck = false;
 var colorCheck = false;
@@ -30,6 +28,32 @@ var auton = true;
 var currentCounters = [];
 var autonCounters = [document.getElementById("auton1"), document.getElementById("auton2"), document.getElementById("auton3"), document.getElementById("auton4"), document.getElementById("auton5")];
 var teleopCounters = [document.getElementById("teleop1"), document.getElementById("teleop2"), document.getElementById("teleop3"), document.getElementById("teleop4"), document.getElementById("teleop5")];
+
+function setVars() {
+	pcAutonBotScore = document.getElementById("auton4").innerHTML;
+	pcAutonOutScore = document.getElementById("auton2").innerHTML;
+	pcAutonInScore = document.getElementById("auton1").innerHTML;
+	pcAutonBotMiss = document.getElementById("auton5").innerHTML
+	pcAutonTopMiss = document.getElementById("auton3").innerHTML;
+	
+	pcTeleopBotScore = document.getElementById("teleop4").innerHTML;
+	pcTeleopOutScore = document.getElementById("teleop2").innerHTML;
+	pcTeleopInScore = document.getElementById("teleop1").innerHTML;
+	pcTeleopBotMiss = document.getElementById("teleop5").innerHTML
+	pcTeleopTopMiss = document.getElementById("teleop3").innerHTML;
+	
+	console.log(pcAutonBotScore);
+	console.log(pcAutonOutScore);
+	console.log(pcAutonInScore);
+	console.log(pcAutonBotMiss);
+	console.log(pcAutonTopMiss);
+
+	console.log(pcTeleopBotScore);
+	console.log(pcTeleopOutScore);
+	console.log(pcTeleopInScore);
+	console.log(pcTeleopBotMiss);
+	console.log(pcTeleopTopMiss);
+}
 
 function toggleMidgame() {
 	console.log("toggled");
@@ -230,9 +254,6 @@ function counterClick(clickedId) {
 			break;
 	}
 }
-
-var autonVars = [pcAutonBotScore, pcAutonTopScore, pcAutonInScore, pcAutonBotAttempt, pcAutonTopAttempt, pcAutonInAttempt];
-var teleopVars = [pcTeleopBotScore, pcTeleopTopScore, pcTeleopInScore, pcTeleopBotAttempt, pcTeleopTopAttempt, pcTeleopInAttempt];
 
 
 //Endgame
