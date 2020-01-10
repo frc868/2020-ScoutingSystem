@@ -256,7 +256,7 @@ function counterClick(clickedId) {
 }
 
 
-//Endgame (THIS YEAR)
+//Endgame
 function renPoint() {
 	document.getElementById('climbA').disabled = false;
 	if (document.getElementById('ren').checked == false) {
@@ -277,6 +277,12 @@ function climbAttempt() {
 		document.getElementById('climbS').checked = false;
 		document.getElementById('climbF').checked = false;
 	}
+}
+function climbS() {
+	document.getElementById('climbF').checked = false;
+}
+function climbF() {
+	document.getElementById('climbS').checked = false;
 }
 
 function powerCellCounter0() {
