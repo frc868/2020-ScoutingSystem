@@ -154,15 +154,26 @@
 					<h3>Endgame</h3>
 					<input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();">  Rendezvous Point</input>
 					<br></br>
+					<br></br>
 					<input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input>
+					<br></br>
 					<br></br>
 					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled> Success</input>
 					<br></br>
+					<br></br>
 					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled>  Failure</input>
 					<br></br>
-					<input type = "checkBox" id = "level" style = "transform: scale(2);">  Level?</input>
 					<br></br>
-					<input type = "number" id = "roboClimb" min = "0" max = "3">Number of Robots that Climbed</input>
+					<input type = "checkBox" id = "level" style = "transform: scale(2);">  Is the generator level?</input>
+					<br></br>
+					<br></br>
+					<p>Number of robots that climbed:</p>
+					<select id = "roboClimb">
+						<option value = "0">0</option>
+						<option value = "1">1</option>
+						<option value = "2">2</option>
+						<option value = "3">3</option>
+					</select>
 				</div>
 				
 				<div id="submit" padding: 15px 32px; style = "font-size: 150%;" class="tab-pane fade">
