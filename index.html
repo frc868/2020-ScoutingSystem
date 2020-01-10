@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Bootstrap Example</title>
+		<title>Scouting System 2020</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
+		<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+		<link rel="stylesheet" href="css/slider.css">
 		<script src="js/index.js"></script>
 	</head>
-	
-	<body>
 
+	<body>
 		<div class="container-fluid" style = "width: 95%">
 			<ul class="nav nav-pills">
 				<li class="active"><a data-toggle="tab" href="#pregame">Pregame</a></li>
-				<li><a data-toggle="tab" href="#midgame">Tele-Op</a></li>
+				<li><a data-toggle="tab" href="#midgame">Midgame</a></li>
 				<li><a data-toggle="tab" href="#endgame">Endgame</a></li>
 				<li><a data-toggle="tab" href="#submit">Submit</a></li>
 			</ul>
@@ -41,129 +44,126 @@
 				</div>
 				
 				<div id="midgame" class="tab-pane fade">
-					<h3>Tele-Op</h3>
-					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-					<div class="container">
+					<h3 onclick="">Midgame</h3>
+					
+					<div onclick="toggleMidgame()">
+					<input type="checkbox" data-toggle="toggle" data-onstyle="warning" data-offstyle="success" data-height="35" data-width="100" data-on="Tele-Op" data-off="Auton">
+					</div>
+					
+					<div class="container" style = "padding-top: 2em;">
 						<center>
 							<div class="row">
-								<div class="col-md-6 bg-info border border-primary">
+								<div style="border-style: solid; " class="col-sm-6 bg-info border border-primary lead">
 									top goal
 								</div>
-								<div class="col-md-4 bg-info border border-primary">
+								<div style="border-style: solid;" class="col-sm-4 bg-info border border-primary lead">
 									bottom goal
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-2 bg-info border border-primary">
+								<div style="border-style: solid;" class="col-sm-2 bg-info border border-primary lead">
 									inner
 								</div>
-								<div class="col-md-2 bg-info border border-primary">
+								<div style="border-style: solid;" class="col-sm-2 bg-info border border-primary lead">
 									outer
 								</div>
-								<div class="col-md-2 bg-info border border-primary">
+								<div style="border-style: solid;" class="col-sm-2 bg-info border border-primary lead">
 									miss
 								</div>
-								<div class="col-md-2 bg-info border border-primary">
+								<div style="border-style: solid;" class="col-sm-2 bg-info border border-primary lead">
 									made
 								</div>
-								<div class="col-md-2 bg-info border border-primary">
+								<div style="border-style: solid;" class="col-sm-2 bg-info border border-primary lead">
 									miss
 								</div>
 							</div>
+							<br>
 							<div class="row">
-								<div class="col-md-2">
-									<button type="button" class="btn btn-success">+1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-success" id = "buttonUp1" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-success">+1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-success" id = "buttonUp2" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-success">+1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-success" id = "buttonUp3" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-success">+1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-success" id = "buttonUp4" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-success">+1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-success" id = "buttonUp5" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
 							</div>
 							<div class="row" id="autonRow">
-								<div class="col-md-2" id="auton1">
-									a
+								<div class="col-sm-2 lead" id="auton1">
+									0
 								</div>
-								<div class="col-md-2" id="auton2">
-									b
+								<div class="col-sm-2 lead" id="auton2">
+									0
 								</div>
-								<div class="col-md-2" id="auton3">
-									c
+								<div class="col-sm-2 lead" id="auton3">
+									0
 								</div>
-								<div class="col-md-2" id="auton4">
-									d
+								<div class="col-sm-2 lead" id="auton4">
+									0
 								</div>
-								<div class="col-md-2" id="auton5">
-									e
+								<div class="col-sm-2 lead" id="auton5">
+									0
 								</div>
 							</div>
-							<div class="row" id="teleopRow">
-								<div class="col-md-2" id="teleop1">
-									a
+							<div class="row" id="teleopRow" style = "display: none">
+								<div class="col-sm-2 lead" id="teleop1">
+									0
 								</div>
-								<div class="col-md-2" id="teleop2">
-									b
+								<div class="col-sm-2 lead" id="teleop2">
+									0
 								</div>
-								<div class="col-md-2" id="teleop3">
-									c
+								<div class="col-sm-2 lead" id="teleop3">
+									0
 								</div>
-								<div class="col-md-2" id="teleop4">
-									d
+								<div class="col-sm-2 lead" id="teleop4">
+									0
 								</div>
-								<div class="col-md-2" id="teleop5">
-									e
+								<div class="col-sm-2 lead" id="teleop5">
+									0
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-2">
-									<button type="button" class="btn btn-danger">-1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown1" value = "-1" onclick = "counterClick(this.id)">-1</button>
 								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-danger">-1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown2" value = "-1" onclick = "counterClick(this.id)">-1</button>
 								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-danger">-1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown3" value = "-1" onclick = "counterClick(this.id)">-1</button>
 								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-danger">-1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown4" value = "-1" onclick = "counterClick(this.id)">-1</button>
 								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-danger">-1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown5" value = "-1" onclick = "counterClick(this.id)">-1</button>
 								</div>
 							</div>
 						</center>
 					</div>
 				</div>
-				
-				<div id="endgame" class="tab-pane fade">
-					<h4 class="panel-title h4">Endgame</h4>
-					<input type = "checkBox">Rendezvous Point</input>
+			
+				<div id="endgame" style = "font-size: 150%;" class="tab-pane fade">
+					<h3>Endgame</h3>
+					<input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();">  Rendezvous Point</input>
 					<br></br>
-					<input type = "checkBox" id = "climbA" onClick = "climbAttempt()">Climb Attempt</input>
-					<input type = "checkBox" id = "climbS" disabled>Success</input>
-					<input type = "checkBox" id = "climbF" disabled>Failure</input>
-					<script type = "text/javascript">
-						//put this here because the js is messed up
-						function climbAttempt() {
-							document.getElementById('climbS').disabled = false;
-							document.getElementById('climbF').disabled = false;
-							if document.getElementById('climbA').checked == true;
-								document.getElementById('climbS').disabled = true;
-								document.getElementById('climbF').disabled = true;
-						}
-					</script>
+					<input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input>
+					<br></br>
+					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" disabled> Success</input>
+					<br></br>
+					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" disabled>  Failure</input>
 				</div>
 				
 				<div id="submit" class="tab-pane fade">
 					<form>
-						<textarea id="words" rows="5" cols="80"></textarea>
+						<textarea value="comments" id="words" rows="5" cols="80"></textarea>
 						<input class="buttonsubmit" type="submit" value="Submit" /> <br>
 						<p id="para"></p>
 					</form>
