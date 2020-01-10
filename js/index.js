@@ -74,6 +74,7 @@ function counterClick(clickedId) {
 				number++;
 				test.innerHTML = number;
 			}
+			
 			break;
 			
 		case "buttonUp3":
@@ -124,11 +125,19 @@ function counterClick(clickedId) {
 				var number = test.innerHTML;
 				number--;
 				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
 			} else {
 				var test = document.getElementById('teleop1');
 				var number = test.innerHTML;
 				number--;
 				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
 			}
 			break;
 			
@@ -138,11 +147,19 @@ function counterClick(clickedId) {
 				var number = test.innerHTML;
 				number--;
 				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
 			} else {
 				var test = document.getElementById('teleop2');
 				var number = test.innerHTML;
 				number--;
 				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
 			}
 			break;
 			
@@ -152,11 +169,19 @@ function counterClick(clickedId) {
 				var number = test.innerHTML;
 				number--;
 				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
 			} else {
 				var test = document.getElementById('teleop3');
 				var number = test.innerHTML;
 				number--;
 				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
 			}
 			break;
 			
@@ -166,11 +191,19 @@ function counterClick(clickedId) {
 				var number = test.innerHTML;
 				number--;
 				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
 			} else {
 				var test = document.getElementById('teleop4');
 				var number = test.innerHTML;
 				number--;
 				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
 			}
 			break;
 			
@@ -180,11 +213,19 @@ function counterClick(clickedId) {
 				var number = test.innerHTML;
 				number--;
 				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
 			} else {
 				var test = document.getElementById('teleop5');
 				var number = test.innerHTML;
 				number--;
 				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
 			}
 			break;
 	}
