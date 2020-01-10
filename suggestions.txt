@@ -1,0 +1,9 @@
+Erli's Notes
+
+Make midgame labels clear
+Submit
+Endgame: Level?
+		 # of robots on lever?
+Make green button bigger
+Make toggle button bigger
+Add pics above tele-op counters

@@ -156,9 +156,13 @@
 					<br></br>
 					<input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input>
 					<br></br>
-					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" disabled> Success</input>
+					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled> Success</input>
 					<br></br>
-					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" disabled>  Failure</input>
+					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled>  Failure</input>
+					<br></br>
+					<input type = "checkBox" id = "level" style = "transform: scale(2);">  Level?</input>
+					<br></br>
+					<input type = "number" id = "roboClimb" min = "0" max = "3">Number of Robots that Climbed</input>
 				</div>
 				
 				<div id="submit" padding: 15px 32px; style = "font-size: 150%;" class="tab-pane fade">
