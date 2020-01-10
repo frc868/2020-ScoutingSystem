@@ -44,7 +44,7 @@
 				</div>
 				
 				<div id="midgame" class="tab-pane fade">
-					<h3 onclick="">Midgame</h3>
+					<h3 onclick="setVars()">Midgame</h3>
 					
 					<div onclick="toggleMidgame()">
 					<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="70" data-width="980" data-on="Tele-Op" data-off="Auton">
@@ -156,14 +156,26 @@
 					<br></br>
 					<input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input>
 					<br></br>
-					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" disabled> Success</input>
+					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled> Success</input>
 					<br></br>
-					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" disabled>  Failure</input>
+					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled>  Failure</input>
+					<br></br>
+					<input type = "checkBox" id = "level" style = "transform: scale(2);">  Level?</input>
+					<br></br>
+					<input type = "number" id = "roboClimb" min = "0" max = "3">Number of Robots that Climbed</input>
 				</div>
 				
-				<div id="submit" class="tab-pane fade">
+				<div id="submit" padding: 15px 32px; style = "font-size: 150%;" class="tab-pane fade">
 					<form>
-						<textarea value="comments" id="words" rows="5" cols="80"></textarea>
+						<h2>Extra Information </h2>
+						<input type = "checkBox" id = Yellow Card> Yellow Card  </input>
+						<br></br>
+						<input type = "checkBox" id = Red Card > Red Card  </input>
+						<br></br>
+						<input type = "checkBox" id = lost communication  > Lost Communication </input>
+						<br></br>
+						<input type = "checkBox" id = Disabled  > Disabled  </input>
+						<br></br>
 						<input class="buttonsubmit" type="submit" value="Submit" /> <br>
 						<p id="para"></p>
 					</form>
