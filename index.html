@@ -48,7 +48,7 @@
 					<h3 onclick="setVars()">Midgame</h3>
 					
 					<div onclick="toggleMidgame()">
-					<input type="checkbox" data-toggle="toggle" data-onstyle="warning" data-offstyle="success" data-height="50" data-width="200" data-on="Tele-Op" data-off="Auton">
+					<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="50" data-width="200" data-on="Tele-Op" data-off="Auton">
 					</div>
 					
 					<div class="container" style = "padding-top: 2em;">
@@ -62,25 +62,41 @@
 								</div>
 							</div>
 							<div class="row">
-								<div style="border-style: solid;" class="col-sm-2 bg-info border border-primary lead">
+								<div class="col-sm-2 bg-info ">
+									<img src="innerport.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-info">
+									<img src="outerport.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-info ">
+									<img src="cross.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-info ">
+									<img src="botyes.png" height="100px" width= "100px">
+								</div><div class="col-sm-2 bg-info ">
+									<img src="botno.png" height="100px" width= "100px">
+								</div>
+							</div>
+							<div class="row">
+								<div style="border-style: solid;" class="col-sm-2 bg-info ">
 									inner
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info border border-primary lead">
+								<div style="border-style: solid;" class="col-sm-2 bg-info ">
 									outer
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info border border-primary lead">
+								<div style="border-style: solid;" class="col-sm-2 bg-info ">
 									miss
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info border border-primary lead">
+								<div style="border-style: solid;" class="col-sm-2 bg-info">
 									made
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info border border-primary lead">
+								<div style="border-style: solid;" class="col-sm-2 bg-info">
 									miss
 								</div>
 							</div>
 							<br>
 							<div class="row">
-								<div class="col-sm-2">
+								<div class="col-sm-2" style="border-left-style: solid;">
 									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp1" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
 								<div class="col-sm-2">
@@ -89,10 +105,10 @@
 								<div class="col-sm-2">
 									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp3" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
-								<div class="col-sm-2">
+								<div class="col-sm-2" style="border-left-style: solid;">
 									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp4" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
-								<div class="col-sm-2">
+								<div class="col-sm-2" style="border-right-style: solid;">
 									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp5" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
 							</div>
@@ -158,15 +174,12 @@
 					<br></br>
 					<input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input>
 					<br></br>
-					<br></br>
 					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled> Success</input>
-					<br></br>
 					<br></br>
 					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled>  Failure</input>
 					<br></br>
 					<br></br>
 					<input type = "checkBox" id = "level" style = "transform: scale(2);">  Is the generator level?</input>
-					<br></br>
 					<br></br>
 					<p>Number of robots that climbed:</p>
 					<select id = "roboClimb">
