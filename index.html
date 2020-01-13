@@ -1,64 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Bootstrap Example</title>
+		<title>Scouting System 2020</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+		<link rel="stylesheet" href="css/slider.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/index.js"></script>
 	</head>
-	
-	<body>
 
-		
-		<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-					 <a class="navbar-brand" href="">
-					<img src="https://techhounds.com/goldCoin.png" alt="logo" style="width:40px;">
-					</a>	
-				  <ul class="navbar-nav">
-					<li class="nav-item active">
-					  <a class="nav-link" href="#a" data-toggle="tab">Pregame</a>
-					</li>
-					<li class="nav-item active">
-					  <a class="nav-link" href="#c" data-toggle="tab">Midgame</a>
-					</li>
-					<li class="nav-item active">
-					  <a class="nav-link" href="#d" data-toggle="tab">Endgame</a>
-					</li>
-					<li class="nav-item active">
-					  <a class="nav-link" href="#e" data-toggle="tab">Submit</a>
-					</li>
-				  </ul>
-				</nav>
-		
+	<body>
+		<div class="container-fluid" style = "width: 95%">
+			<ul class="nav nav-pills">
+				<li class="active"><a data-toggle="tab" href="#pregame">Pregame</a></li>
+				<li><a data-toggle="tab" href="#midgame">Midgame</a></li>
+				<li><a data-toggle="tab" href="#endgame">Endgame</a></li>
+				<li><a data-toggle="tab" href="#submit">Submit</a></li>
+			</ul>
+
 			<div class="tab-content">
-				<div id="home" class="tab-pane fade in active">
-					<h3>HOME</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<div id="pregame" class="tab-pane fade in active">
+					<h3>Pregame</h3>
+					<p>Match Qualification # Here:</p>
+					<input type="number" class="textbox" id="matchType" onKeyPress="if(this.value.length==3) return false;" onKeyUp="submit2()" min="0" max = "999"/>
+					</br>
+					</br>
+					<p>Enter Team # Here:</p>
+					<input type="number" class="textbox" id="number" onKeyPress="if(this.value.length==5) return false;" onKeyUp="submit1()" min="0" max = "99999"/>
+					</br>
+					</br>
+					<p>Number of Power Cells That Have Been Preloaded</p>
+					<input type="radio" name="numOfCells" id="powerCell0" onClick="powerCellCounter0()" value="0">0</input>
+					<input type="radio" name="numOfCells" id="powerCell1" onClick="powerCellCounter1()" value="1">1</input>
+					<input type="radio" name="numOfCells" id="powerCell2" onClick="powerCellCounter2()" value="2">2</input>
+					<input type="radio" name="numOfCells" id="powerCell3" onClick="powerCellCounter3()" value="3">3</input>
+					</br>
+					<div id="test"><p></p></div>
 				</div>
 				
-				<div id="a" class="tab-pane fade">
-					<h3>Menu 1</h3>
-					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<div id="midgame" class="tab-pane fade">
+					<h3 onclick="setVars()">Midgame</h3>
+					
+					<div onclick="toggleMidgame()">
+					<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="50" data-width="200" data-on="Tele-Op" data-off="Auton">
+					</div>
+					
+					<div class="container" style = "padding-top: 2em;">
+						<center>
+							<div class="row">
+								<div style="border-style: solid; " class="col-sm-6 bg-info border border-primary lead">
+									top goal
+								</div>
+								<div style="border-style: solid;" class="col-sm-4 bg-info border border-primary lead">
+									bottom goal
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-2 bg-info ">
+									<img src="innerport.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-info">
+									<img src="outerport.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-info ">
+									<img src="cross.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-info ">
+									<img src="botyes.png" height="100px" width= "100px">
+								</div><div class="col-sm-2 bg-info ">
+									<img src="botno.png" height="100px" width= "100px">
+								</div>
+							</div>
+							<div class="row">
+								<div style="border-style: solid;" class="col-sm-2 bg-info ">
+									inner
+								</div>
+								<div style="border-style: solid;" class="col-sm-2 bg-info ">
+									outer
+								</div>
+								<div style="border-style: solid;" class="col-sm-2 bg-info ">
+									miss
+								</div>
+								<div style="border-style: solid;" class="col-sm-2 bg-info">
+									made
+								</div>
+								<div style="border-style: solid;" class="col-sm-2 bg-info">
+									miss
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-sm-2" style="border-left-style: solid;">
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp1" value = "1" onclick = "counterClick(this.id);">+1</button>
+								</div>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp2" value = "1" onclick = "counterClick(this.id);">+1</button>
+								</div>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp3" value = "1" onclick = "counterClick(this.id);">+1</button>
+								</div>
+								<div class="col-sm-2" style="border-left-style: solid;">
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp4" value = "1" onclick = "counterClick(this.id);">+1</button>
+								</div>
+								<div class="col-sm-2" style="border-right-style: solid;">
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp5" value = "1" onclick = "counterClick(this.id);">+1</button>
+								</div>
+							</div>
+							<div class="row" id="autonRow">
+								<div class="col-sm-2 lead" id="auton1">
+									0
+								</div>
+								<div class="col-sm-2 lead" id="auton2">
+									0
+								</div>
+								<div class="col-sm-2 lead" id="auton3">
+									0
+								</div>
+								<div class="col-sm-2 lead" id="auton4">
+									0
+								</div>
+								<div class="col-sm-2 lead" id="auton5">
+									0
+								</div>
+							</div>
+							<div class="row" id="teleopRow" style = "display: none">
+								<div class="col-sm-2 lead" id="teleop1">
+									0
+								</div>
+								<div class="col-sm-2 lead" id="teleop2">
+									0
+								</div>
+								<div class="col-sm-2 lead" id="teleop3">
+									0
+								</div>
+								<div class="col-sm-2 lead" id="teleop4">
+									0
+								</div>
+								<div class="col-sm-2 lead" id="teleop5">
+									0
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown1" value = "-1" onclick = "counterClick(this.id)">-1</button>
+								</div>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown2" value = "-1" onclick = "counterClick(this.id)">-1</button>
+								</div>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown3" value = "-1" onclick = "counterClick(this.id)">-1</button>
+								</div>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown4" value = "-1" onclick = "counterClick(this.id)">-1</button>
+								</div>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown5" value = "-1" onclick = "counterClick(this.id)">-1</button>
+								</div>
+							</div>
+						</center>
+					</div>
+				</div>
+			
+				<div id="endgame" style = "font-size: 150%;" class="tab-pane fade">
+					<h3>Endgame</h3>
+					<input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();">  Rendezvous Point</input>
+					<br></br>
+					<br></br>
+					<input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input>
+					<br></br>
+					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled> Success</input>
+					<br></br>
+					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled>  Failure</input>
+					<br></br>
+					<br></br>
+					<input type = "checkBox" id = "level" style = "transform: scale(2);">  Is the generator level?</input>
+					<br></br>
+					<p>Number of robots that climbed:</p>
+					<select id = "roboClimb">
+						<option value = "0">0</option>
+						<option value = "1">1</option>
+						<option value = "2">2</option>
+						<option value = "3">3</option>
+					</select>
 				</div>
 				
-				<div id="b" class="tab-pane fade">
-					<h4 class="panel-title h4">Endgame</h4>
-						<input type = "checkBox">Rendezvous Point</input>
-						<br></br>
-						<input type = "checkBox" onClick = "climbAttempt()">Climb Attempt</input>
-						<input type = "checkBox" id = "climbS" disabled>Success</input>
-						<input type = "checkBox" id = "climbF" disabled>Failure</input>
-				</div>
-				
-				<div id="c" class="tab-pane fade">
+				<div id="submit" padding: 15px 32px; style = "font-size: 150%;" class="tab-pane fade">
 					<form>
-						<textarea id="words" rows="5" cols="80"></textarea>
+						<h2>Extra Information </h2>
+						<input type = "checkBox" id = Yellow Card> Yellow Card  </input>
+						<br></br>
+						<input type = "checkBox" id = Red Card > Red Card  </input>
+						<br></br>
+						<input type = "checkBox" id = lost communication  > Lost Communication </input>
+						<br></br>
+						<input type = "checkBox" id = Disabled  > Disabled  </input>
+						<br></br>
 						<input class="buttonsubmit" type="submit" value="Submit" /> <br>
 						<p id="para"></p>
 					</form>

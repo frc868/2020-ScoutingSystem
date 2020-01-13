@@ -1,24 +1,302 @@
-var primaryId;
-‪var compId, teamNo, matchNo, preload, moveStart, powercellsBotScore, powercellsTopScore, powercellsInScore, powercellsBotAttempt, powercellsTopAttempt, powercellsInAttempt, revolutionsCheck, colorCheck, climb, park, comments;
-‪compId = 0;
-teamNo = 0;
-matchNo = 0;
-preload = 0;
-moveStart = false;
-powercellsBotScore = 0;
-powercellsTopScore = 0;
-‪powercellsInScore = 0;
-‪powercellsBotAttempt = 0;
-‪powercellsTopAttempt = 0;
-‪powercellsInAttempt = 0;
-‪revolutionsCheck = 0;
-‪colorCheck = false;
-‪climb = false;
-‪park = false;
-‪comments = false;
+var compId = 0;
+var compId = 0;
+var teamNo = 0;
+var matchNo = 0;
+var preload = 0;
+var moveStart = false;
 
-//Endgame (THIS YEAR)
+var pcAutonBotScore = 0;
+var pcAutonOutScore = 0;
+var pcAutonInScore = 0;
+var pcAutonBotMiss = 0;
+var pcAutonTopMiss = 0;
+
+var pcTeleopBotScore = 0;
+var pcTeleopOutScore = 0;
+var pcTeleopInScore = 0;
+var pcTeleopBotMiss = 0;
+var pcTeleopTopMiss = 0;
+
+var revolutionsCheck = false;
+var colorCheck = false;
+var limb = false;
+var park = false;
+var comments = "";
+
+
+var auton = true;
+var currentCounters = [];
+var autonCounters = [document.getElementById("auton1"), document.getElementById("auton2"), document.getElementById("auton3"), document.getElementById("auton4"), document.getElementById("auton5")];
+var teleopCounters = [document.getElementById("teleop1"), document.getElementById("teleop2"), document.getElementById("teleop3"), document.getElementById("teleop4"), document.getElementById("teleop5")];
+
+function setVars() {
+	pcAutonBotScore = document.getElementById("auton4").innerHTML;
+	pcAutonOutScore = document.getElementById("auton2").innerHTML;
+	pcAutonInScore = document.getElementById("auton1").innerHTML;
+	pcAutonBotMiss = document.getElementById("auton5").innerHTML
+	pcAutonTopMiss = document.getElementById("auton3").innerHTML;
+	
+	pcTeleopBotScore = document.getElementById("teleop4").innerHTML;
+	pcTeleopOutScore = document.getElementById("teleop2").innerHTML;
+	pcTeleopInScore = document.getElementById("teleop1").innerHTML;
+	pcTeleopBotMiss = document.getElementById("teleop5").innerHTML
+	pcTeleopTopMiss = document.getElementById("teleop3").innerHTML;
+	
+	console.log(pcAutonBotScore);
+	console.log(pcAutonOutScore);
+	console.log(pcAutonInScore);
+	console.log(pcAutonBotMiss);
+	console.log(pcAutonTopMiss);
+
+	console.log(pcTeleopBotScore);
+	console.log(pcTeleopOutScore);
+	console.log(pcTeleopInScore);
+	console.log(pcTeleopBotMiss);
+	console.log(pcTeleopTopMiss);
+}
+
+function toggleMidgame() {
+	console.log("toggled");
+	auton = !auton;
+	if (auton) {
+		document.getElementById("autonRow").style.display = "block";
+		document.getElementById("teleopRow").style.display = "none";
+		currentCounters = autonCounters;
+	}
+	else {
+		document.getElementById("autonRow").style.display = "none";
+		document.getElementById("teleopRow").style.display = "block";
+		currentCounters = teleopCounters;
+	}
+}
+
+function counterClick(clickedId) {
+	switch (clickedId) {
+		case "buttonUp1":
+			if (auton) {
+				var test = document.getElementById('auton1');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop1');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			}
+			break;
+			
+		case "buttonUp2":
+			if (auton) {
+				var test = document.getElementById('auton2');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop2');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			}
+			
+			break;
+			
+		case "buttonUp3":
+			if (auton) {
+				var test = document.getElementById('auton3');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop3');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			}
+			break;
+		
+		case "buttonUp4":
+			if (auton) {
+				var test = document.getElementById('auton4');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop4');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			}
+			break;
+			
+		case "buttonUp5":
+			if (auton) {
+				var test = document.getElementById('auton5');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			} else {
+				var test = document.getElementById('teleop5');
+				var number = test.innerHTML;
+				number++;
+				test.innerHTML = number;
+			}
+			break;
+			
+		case "buttonDown1":
+			if (auton) {
+				var test = document.getElementById('auton1');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
+			} else {
+				var test = document.getElementById('teleop1');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
+			}
+			break;
+			
+		case "buttonDown2":
+			if (auton) {
+				var test = document.getElementById('auton2');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
+			} else {
+				var test = document.getElementById('teleop2');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
+			}
+			break;
+			
+		case "buttonDown3":
+			if (auton) {
+				var test = document.getElementById('auton3');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
+			} else {
+				var test = document.getElementById('teleop3');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
+			}
+			break;
+			
+		case "buttonDown4":
+			if (auton) {
+				var test = document.getElementById('auton4');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
+			} else {
+				var test = document.getElementById('teleop4');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
+			}
+			break;
+			
+		case "buttonDown5":
+			if (auton) {
+				var test = document.getElementById('auton5');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
+			} else {
+				var test = document.getElementById('teleop5');
+				var number = test.innerHTML;
+				number--;
+				test.innerHTML = number;
+				
+				if (number < 0) {
+			    test.innerHTML = 0;
+			  }
+			}
+			break;
+	}
+}
+
+
+//Endgame
+function renPoint() {
+	document.getElementById('climbA').disabled = false;
+	if (document.getElementById('ren').checked == false) {
+		document.getElementById('climbA').disabled = true;
+		document.getElementById('climbS').disabled = true;
+		document.getElementById('climbF').disabled = true;
+		document.getElementById('climbA').checked = false;
+		document.getElementById('climbS').checked = false;
+		document.getElementById('climbF').checked = false;
+	}
+}
 function climbAttempt() {
 	document.getElementById('climbS').disabled = false;
 	document.getElementById('climbF').disabled = false;
-} 
+	if (document.getElementById('climbA').checked == false) {
+		document.getElementById('climbS').disabled = true;
+		document.getElementById('climbF').disabled = true;
+		document.getElementById('climbS').checked = false;
+		document.getElementById('climbF').checked = false;
+	}
+}
+function climbS() {
+	document.getElementById('climbF').checked = false;
+}
+function climbF() {
+	document.getElementById('climbS').checked = false;
+}
+
+function powerCellCounter0() {
+	preload = document.getElementById('powerCell0').value;
+}
+
+function powerCellCounter1() {
+	preload = document.getElementById('powerCell1').value;
+}
+
+function powerCellCounter2() {
+	preload = document.getElementById('powerCell2').value;
+}
+
+function powerCellCounter3() {
+	preload = document.getElementById('powerCell3').value;
+}
