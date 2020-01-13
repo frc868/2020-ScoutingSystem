@@ -12,9 +12,10 @@
 		<link rel="stylesheet" href="css/slider.css">
 		<link rel="stylesheet" href="css/style.css">
 		<script src="js/index.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
 	</head>
 
-	<body>
+	<body style="font-family: 'Alata', sans-serif;">
 		<div class="container-fluid" style = "width: 95%">
 			<ul class="nav nav-pills">
 				<li class="active"><a data-toggle="tab" href="#pregame">Pregame</a></li>
@@ -50,47 +51,49 @@
 					<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="50" data-width="200" data-on="Tele-Op" data-off="Auton">
 					</div>
 					
-					<div class="container" style = "padding-top: 2em;">
+					<div class="container" style = "padding-top: 1em;">
 						<center>
 							<div class="row">
-								<div style="border-style: solid; " class="col-sm-6 bg-info border border-primary lead">
+								<div style="border-style: solid; " class="col-sm-6 bg-white border border-primary lead">
 									Top Goal
 								</div>
-								<div style="border-style: solid;" class="col-sm-4 bg-info border border-primary lead">
+								<div style="border-style: solid;" class="col-sm-4 bg-white border border-primary lead">
 									Bottom Goal
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-sm-2 bg-info ">
+							<div class="row" style="padding-bottom: 1em;">
+								<div class="col-sm-2 bg-white ">
 									<img src="innerport.png" height="100px" width= "100px">
 								</div>
-								<div class="col-sm-2 bg-info">
+								<div class="col-sm-2 bg-white">
 									<img src="outerport.png" height="100px" width= "100px">
 								</div>
-								<div class="col-sm-2 bg-info ">
+								<div class="col-sm-2 bg-white ">
 									<img src="cross.png" height="100px" width= "100px">
 								</div>
-								<div class="col-sm-2 bg-info ">
+								<div class="col-sm-2 bg-white ">
 									<img src="botyes.png" height="100px" width= "100px">
-								</div><div class="col-sm-2 bg-info ">
+								</div><div class="col-sm-2 bg-white ">
 									<img src="botno.png" height="100px" width= "100px">
 								</div>
 							</div>
 							<div class="row">
-								<div style="border-style: solid;" class="col-sm-2 bg-info ">
+
+								<div style="border-style: solid;" class="col-sm-2 bg-white ">
 									Top Inner Circle Scored
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info ">
+								<div style="border-style: solid;" class="col-sm-2 bg-white ">
 									Top Outer Circle Scored
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info ">
+								<div style="border-style: solid;" class="col-sm-2 bg-white ">
 									Top Missed
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info">
+								<div style="border-style: solid;" class="col-sm-2 bg-white">
 									Bottom Scored
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info">
+								<div style="border-style: solid;" class="col-sm-2 bg-white">
 									Bottom Missed
+
 								</div>
 							</div>
 							<br>
@@ -168,17 +171,17 @@
 			
 				<div id="endgame" style = "font-size: 150%;" class="tab-pane fade">
 					<h3>Endgame</h3>
-					<input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();">  Rendezvous Point</input>
+					<label><input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();">  Rendezvous Point</input></label>
 					<br></br>
 					<br></br>
-					<input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input>
+					<label><input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input></label>
 					<br></br>
-					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled> Success</input>
+					<label><input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled> Success</input></label>
 					<br></br>
-					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled>  Failure</input>
+					<label><input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled>  Failure</input></label>
 					<br></br>
 					<br></br>
-					<input type = "checkBox" id = "level" style = "transform: scale(2);">  Generator is level</input>
+					<label><input type = "checkBox" id = "level" style = "transform: scale(2);">  Generator is level</input></label>
 					<br></br>
 					<p>Number of robots that climbed:</p>
 					<select id = "roboClimb">
