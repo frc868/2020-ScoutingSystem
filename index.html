@@ -7,15 +7,15 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		
 		<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 		<link rel="stylesheet" href="css/slider.css">
 		<link rel="stylesheet" href="css/style.css">
 		<script src="js/index.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
 	</head>
 
-	<body>
+	<body style="font-family: 'Alata', sans-serif;">
 		<div class="container-fluid" style = "width: 95%">
 			<ul class="nav nav-pills">
 				<li class="active"><a data-toggle="tab" href="#pregame">Pregame</a></li>
@@ -28,20 +28,20 @@
 				<div id="pregame" class="tab-pane fade in active">
 					<h3>Pregame</h3>
 					<p>Match Qualification # Here:</p>
-					<input type="number" class="textbox" id="matchType" onKeyPress="if(this.value.length==3) return false;" onKeyUp="submit2()" min="0" max = "999"/>
+					<input type="number" class="textbox" id="matchType" onKeyPress="if(this.value.length==3) return false;" onKeyUp="submit2()" min="0" max = "9999999"/>
 					</br>
 					</br>
 					<p>Enter Team # Here:</p>
-					<input type="number" class="textbox" id="number" onKeyPress="if(this.value.length==5) return false;" onKeyUp="submit1()" min="0" max = "99999"/>
+					<input type="number" class="textbox" id="number" onKeyPress="if(this.value.length==5) return false;" onKeyUp="submit1()" min="0" max = "9999999"/>
 					</br>
 					</br>
-					<p>Number of Power Cells That Have Been Preloaded</p>
+					<!-- <p>Number of Power Cells That Have Been Preloaded</p>
 					<input type="radio" name="numOfCells" id="powerCell0" onClick="powerCellCounter0()" value="0">0</input>
 					<input type="radio" name="numOfCells" id="powerCell1" onClick="powerCellCounter1()" value="1">1</input>
 					<input type="radio" name="numOfCells" id="powerCell2" onClick="powerCellCounter2()" value="2">2</input>
 					<input type="radio" name="numOfCells" id="powerCell3" onClick="powerCellCounter3()" value="3">3</input>
 					</br>
-					<div id="test"><p></p></div>
+					<div id="test"><p></p></div> -->
 				</div>
 				
 				<div id="midgame" class="tab-pane fade">
@@ -51,47 +51,49 @@
 					<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="50" data-width="200" data-on="Tele-Op" data-off="Auton">
 					</div>
 					
-					<div class="container" style = "padding-top: 2em;">
+					<div class="container" style = "padding-top: 1em;">
 						<center>
 							<div class="row">
-								<div style="border-style: solid; " class="col-sm-6 bg-info border border-primary lead">
-									top goal
+								<div style="border-style: solid; " class="col-sm-6 bg-white border border-primary lead">
+									Top Goal
 								</div>
-								<div style="border-style: solid;" class="col-sm-4 bg-info border border-primary lead">
-									bottom goal
+								<div style="border-style: solid;" class="col-sm-4 bg-white border border-primary lead">
+									Bottom Goal
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-sm-2 bg-info ">
+							<div class="row" style="padding-bottom: 1em;">
+								<div class="col-sm-2 bg-white ">
 									<img src="innerport.png" height="100px" width= "100px">
 								</div>
-								<div class="col-sm-2 bg-info">
+								<div class="col-sm-2 bg-white">
 									<img src="outerport.png" height="100px" width= "100px">
 								</div>
-								<div class="col-sm-2 bg-info ">
+								<div class="col-sm-2 bg-white ">
 									<img src="cross.png" height="100px" width= "100px">
 								</div>
-								<div class="col-sm-2 bg-info ">
+								<div class="col-sm-2 bg-white ">
 									<img src="botyes.png" height="100px" width= "100px">
-								</div><div class="col-sm-2 bg-info ">
+								</div><div class="col-sm-2 bg-white ">
 									<img src="botno.png" height="100px" width= "100px">
 								</div>
 							</div>
 							<div class="row">
-								<div style="border-style: solid;" class="col-sm-2 bg-info ">
-									inner
+
+								<div style="border-style: solid;" class="col-sm-2 bg-white ">
+									Top Inner Circle Scored
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info ">
-									outer
+								<div style="border-style: solid;" class="col-sm-2 bg-white ">
+									Top Outer Circle Scored
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info ">
-									miss
+								<div style="border-style: solid;" class="col-sm-2 bg-white ">
+									Top Missed
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info">
-									made
+								<div style="border-style: solid;" class="col-sm-2 bg-white">
+									Bottom Scored
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info">
-									miss
+								<div style="border-style: solid;" class="col-sm-2 bg-white">
+									Bottom Missed
+
 								</div>
 							</div>
 							<br>
@@ -112,7 +114,7 @@
 									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp5" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
 							</div>
-							<div class="row" id="autonRow">
+							<div class="row" id="autonRow" style="padding-top: 1em;">
 								<div class="col-sm-2 lead" id="auton1">
 									0
 								</div>
@@ -169,17 +171,17 @@
 			
 				<div id="endgame" style = "font-size: 150%;" class="tab-pane fade">
 					<h3>Endgame</h3>
-					<input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();">  Rendezvous Point</input>
+					<label><input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();">  Rendezvous Point</input></label>
 					<br></br>
 					<br></br>
-					<input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input>
+					<label><input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input></label>
 					<br></br>
-					<input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled> Success</input>
+					<label><input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled> Success</input></label>
 					<br></br>
-					<input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled>  Failure</input>
+					<label><input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled>  Failure</input></label>
 					<br></br>
 					<br></br>
-					<input type = "checkBox" id = "level" style = "transform: scale(2);">  Is the generator level?</input>
+					<label><input type = "checkBox" id = "level" style = "transform: scale(2);">  Generator is level</input></label>
 					<br></br>
 					<p>Number of robots that climbed:</p>
 					<select id = "roboClimb">
@@ -215,6 +217,5 @@
 				</div>
 			</div>
 		</div>
-
 	</body>
 </html>
