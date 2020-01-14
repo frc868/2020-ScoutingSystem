@@ -318,7 +318,15 @@ function climbS() {
 function climbF() {
 	document.getElementById('climbS').checked = false;
 }
-
+//Disables the submit button unless there is a team and match number
+function subButton() {
+	if (document.getElementById('matchType').value == 0 || document.getElementById('number').value == 0) {
+		document.getElementById('buttonSubmit').disabled = true;
+	}
+	else {
+		document.getElementById('buttonSubmit').disabled = false;
+	}
+}
 //Sets the value of preload to the selected number of preloaded cells
 function powerCellCounter0() {
 	preload = document.getElementById('powerCell0').value;
