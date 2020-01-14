@@ -9,6 +9,7 @@ var pcAutonOutScore = 0;
 var pcAutonInScore = 0;
 var pcAutonBotMiss = 0;
 var pcAutonTopMiss = 0;
+var pcAutonInitiationLine = false;
 
 var pcTeleopBotScore = 0;
 var pcTeleopOutScore = 0;
