@@ -9,6 +9,7 @@ var pcAutonOutScore = 0;
 var pcAutonInScore = 0;
 var pcAutonBotMiss = 0;
 var pcAutonTopMiss = 0;
+var pcAutonInitiationLine = false;
 
 var pcTeleopBotScore = 0;
 var pcTeleopOutScore = 0;
@@ -49,15 +50,15 @@ function setVars() {
 	pcTeleopTopMiss = document.getElementById("teleop3").innerHTML;
 	
 
-	matchNo = document.getElementById("matchType").innerHTML;
-	teamNo = document.getElementById("number").innerHTML;
+	matchNo = document.getElementById("matchNo").value;
+	teamNo = document.getElementById("teamNo").teamNo;
 	park = document.getElementById("ren").checked;
 	climb = document.getElementById("climbS").checked;
 	generatorLevel = document.getElementById("level").checked;
 	noClimb = document.getElementById("roboClimb").value;
 	yellow = document.getElementById("yellowCard").checked;
 	red = document.getElementById("redCard").checked;
-	lostComms = document.getElementById("lostCommunication").checked;
+	lostComms = document.getElementById("lostComm").checked;
 	disabled = document.getElementById("disabled").checked;
 
 	console.log("pcAutonBotScore" + pcAutonBotScore);
@@ -317,7 +318,15 @@ function climbS() {
 function climbF() {
 	document.getElementById('climbS').checked = false;
 }
-
+//Disables the submit button unless there is a team and match number
+function subButton() {
+	if (document.getElementById('matchNo').value == 0 || document.getElementById('teamNo').value == 0) {
+		document.getElementById('sub').disabled = true;
+	}
+	else {
+		document.getElementById('sub').disabled = false;
+	}
+}
 //Sets the value of preload to the selected number of preloaded cells
 function powerCellCounter0() {
 	preload = document.getElementById('powerCell0').value;
