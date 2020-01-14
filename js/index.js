@@ -34,6 +34,7 @@ var currentCounters = [];
 var autonCounters = [document.getElementById("auton1"), document.getElementById("auton2"), document.getElementById("auton3"), document.getElementById("auton4"), document.getElementById("auton5")];
 var teleopCounters = [document.getElementById("teleop1"), document.getElementById("teleop2"), document.getElementById("teleop3"), document.getElementById("teleop4"), document.getElementById("teleop5")];
 
+//Setting the variables to what they are at the end of the match
 function setVars() {
 	pcAutonBotScore = document.getElementById("auton4").innerHTML;
 	pcAutonOutScore = document.getElementById("auton2").innerHTML;
@@ -72,6 +73,7 @@ function setVars() {
 
 }
 
+//Allows the toggle button to change the midgame tab from tele-op to auton
 function toggleMidgame() {
 	console.log("toggled");
 	auton = !auton;
@@ -87,6 +89,7 @@ function toggleMidgame() {
 	}
 }
 
+//Makes it so that the +1 buttons in the midgame tab change the correct number
 function counterClick(clickedId) {
 	switch (clickedId) {
 		case "buttonUp1":
@@ -274,6 +277,8 @@ function counterClick(clickedId) {
 
 
 //Endgame
+
+//Makes it so that the climb attempt is enabled when rendezvos point is checked and disabled when rendezvous point is not checked
 function renPoint() {
 	document.getElementById('climbA').disabled = false;
 	if (document.getElementById('ren').checked == false) {
@@ -285,6 +290,7 @@ function renPoint() {
 		document.getElementById('climbF').checked = false;
 	}
 }
+//Makes it so that the success and failure buttons are enabled when climb attempt is checked and disabled when climb attempt is not checked
 function climbAttempt() {
 	document.getElementById('climbS').disabled = false;
 	document.getElementById('climbF').disabled = false;
@@ -302,18 +308,16 @@ function climbF() {
 	document.getElementById('climbS').checked = false;
 }
 
+//Sets the value of preload to the selected number of preloaded cells
 function powerCellCounter0() {
 	preload = document.getElementById('powerCell0').value;
 }
-
 function powerCellCounter1() {
 	preload = document.getElementById('powerCell1').value;
 }
-
 function powerCellCounter2() {
 	preload = document.getElementById('powerCell2').value;
 }
-
 function powerCellCounter3() {
 	preload = document.getElementById('powerCell3').value;
 }
