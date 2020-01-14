@@ -19,6 +19,8 @@ var pcTeleopTopMiss = 0;
 
 var revolutionsCheck = false;
 var colorCheck = false;
+var defense = false;
+
 var climb = null;
 var park = false;
 var comments = "";
@@ -62,6 +64,11 @@ function setVars() {
 	red = document.getElementById("redCard").checked;
 	lostComms = document.getElementById("lostComm").checked;
 	disabled = document.getElementById("disabled").checked;
+	
+	revolutionsCheck = document.getElementById("spinNumber").checked;
+	colorCheck = document.getElementById("spinColor").checked;
+	defense = document.getElementById("defense").checked;
+	moveStart = document.getElementById("initiationLine").checked;
 
 	console.log("pcAutonBotScore" + pcAutonBotScore);
 	console.log("pcAutonOutScore" + pcAutonOutScore);
@@ -377,7 +384,11 @@ $(document).ready(function() {
 				yellow_php: yellow,
 				red_php: red,
 				lostComms_php: lostComms,
-				disabled_php: disabled
+				disabled_php: disabled,
+				revolutionsCheck_php: revolutionsCheck,
+				colorCheck_php: colorCheck,
+				defense_php: defense,
+				moveStart_php: moveStart
 			},
 			success: function(data) {
 				$('#result').html(data);
