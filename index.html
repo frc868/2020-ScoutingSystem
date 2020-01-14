@@ -53,15 +53,15 @@
 					
 					<div class="container" style = "padding-top: 1em;">
 						<div id="autonButtons">
-							<input type="checkBox" id="initiationLine"/> Crossing Initiation Line
+							<label class="container"><input type="checkBox" id="initiationLine"/> Crossing Initiation Line <span class="checkmark"></span> </label>
 							<br></br>
 						</div>
 						<div id="teleOpButtons">
-							<input type="checkBox" id="spinNumber"/> Control Panel Spun 3-5 Times With Precision
+							<label class="container"><input type="checkBox" id="spinNumber"/> Control Panel Spun 3-5 Times With Precision <span class="checkmark"></span></label>
 							<br></br>
-							<input type="checkBox" id="spinColor"/> Control Panel Spun to Specified Color
+							<label class="container"><input type="checkBox" id="spinColor"/> Control Panel Spun to Specified Color <span class="checkmark"></span></label>
 							<br></br>
-							<input type="checkBox" id="defense"/> Defense was Played
+							<label class="container"><input type="checkBox" id="defense"/> Defense was Played <span class="checkmark"></span></label>
 							<br></br>
 						</div>
 						<script>
@@ -197,17 +197,17 @@
 			
 				<div id="endgame" style = "font-size: 150%;" class="tab-pane fade">
 					<h3>Endgame</h3>
-					<label><input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();"/>  Rendezvous Point</label>
+					<label class="container"><input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();"/>  Rendezvous Point <span class="checkmark"></span></label>
 					<br>
 					<br>
-					<label><input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled/>  Climb Attempt</label>
+					<label class="container"><input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled/>  Climb Attempt <span class="checkmark"></span></label>
 					<br>
-					<label><input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled/>  Success</label>
+					<label class="container"><input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled/>  Success <span class="checkmark"></span></label>
 					<br>
-					<label><input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled/>  Failure</label>
+					<label class="container"><input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled/>  Failure <span class="checkmark"></span></label>
 					<br>
 					<br>
-					<label><input type = "checkBox" id = "level" style = "transform: scale(2);"/>  Generator is level</label>
+					<label class="container"><input type = "checkBox" id = "level" style = "transform: scale(2);"/>  Generator is level <span class="checkmark"></span></label>
 					<br>
 					<p>Number of robots that climbed:</p>
 					<select id = "roboClimb">
