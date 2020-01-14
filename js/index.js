@@ -1,5 +1,4 @@
 var compId = 0;
-var compId = 0;
 var teamNo = 0;
 var matchNo = 0;
 var preload = 0;
@@ -10,6 +9,7 @@ var pcAutonOutScore = 0;
 var pcAutonInScore = 0;
 var pcAutonBotMiss = 0;
 var pcAutonTopMiss = 0;
+var pcAutonInitiationLine = false;
 
 var pcTeleopBotScore = 0;
 var pcTeleopOutScore = 0;
@@ -19,15 +19,23 @@ var pcTeleopTopMiss = 0;
 
 var revolutionsCheck = false;
 var colorCheck = false;
-var limb = false;
+var climb = null;
 var park = false;
 var comments = "";
+var generatorLevel = false;
+var noClimb = 0;
+var yellow;
+var red = false;
+var lostComms = false;
+var disabled = false;
 
 
 var auton = true;
 var currentCounters = [];
 var autonCounters = [document.getElementById("auton1"), document.getElementById("auton2"), document.getElementById("auton3"), document.getElementById("auton4"), document.getElementById("auton5")];
 var teleopCounters = [document.getElementById("teleop1"), document.getElementById("teleop2"), document.getElementById("teleop3"), document.getElementById("teleop4"), document.getElementById("teleop5")];
+
+document.getElementById("teleOpButtons").style.display = "none";
 
 //Setting the variables to what they are at the end of the match
 function setVars() {
@@ -43,17 +51,38 @@ function setVars() {
 	pcTeleopBotMiss = document.getElementById("teleop5").innerHTML
 	pcTeleopTopMiss = document.getElementById("teleop3").innerHTML;
 	
-	console.log(pcAutonBotScore);
-	console.log(pcAutonOutScore);
-	console.log(pcAutonInScore);
-	console.log(pcAutonBotMiss);
-	console.log(pcAutonTopMiss);
 
-	console.log(pcTeleopBotScore);
-	console.log(pcTeleopOutScore);
-	console.log(pcTeleopInScore);
-	console.log(pcTeleopBotMiss);
-	console.log(pcTeleopTopMiss);
+	matchNo = document.getElementById("matchNo").value;
+	teamNo = document.getElementById("teamNo").teamNo;
+	park = document.getElementById("ren").checked;
+	climb = document.getElementById("climbS").checked;
+	generatorLevel = document.getElementById("level").checked;
+	noClimb = document.getElementById("roboClimb").value;
+	yellow = document.getElementById("yellowCard").checked;
+	red = document.getElementById("redCard").checked;
+	lostComms = document.getElementById("lostComm").checked;
+	disabled = document.getElementById("disabled").checked;
+
+	console.log("pcAutonBotScore" + pcAutonBotScore);
+	console.log("pcAutonOutScore" + pcAutonOutScore);
+	console.log("pcAutonInScore" + pcAutonInScore);
+	console.log("pcAutonBotMiss" + pcAutonBotMiss);
+	console.log("pcAutonTopMiss" + pcAutonTopMiss);
+	console.log("pcTeleopBotScore" + pcTeleopBotScore);
+	console.log("pcTeleopOutScore" + pcTeleopOutScore);
+	console.log("pcTeleopInScore" + pcTeleopInScore);
+	console.log("pcTeleopBotMiss" + pcTeleopBotMiss);
+	console.log("pcTeleopTopMiss" + pcTeleopTopMiss);
+	console.log("matchNo" + matchNo);
+	console.log("teamNo" + teamNo);
+	console.log("park" + park);
+	console.log("climb" + climb);
+	console.log("generatorLevel" + generatorLevel);
+	console.log("noClimb" + noClimb);
+	console.log("yellow" + yellow);
+	console.log("red" + red);
+	console.log("lostComms" + lostComms);
+	console.log("disabled" + disabled);
 }
 
 //Allows the toggle button to change the midgame tab from tele-op to auton
@@ -69,6 +98,16 @@ function toggleMidgame() {
 		document.getElementById("autonRow").style.display = "none";
 		document.getElementById("teleopRow").style.display = "block";
 		currentCounters = teleopCounters;
+	}
+	
+	var x = document.getElementById("teleOpButtons");
+	var y = document.getElementById("autonButtons");
+	if(x.style.display == "none"){
+		x.style.display = "";
+		y.style.display = "none";
+	} else{
+		x.style.display = "none";
+		y.style.display = "";
 	}
 }
 
@@ -290,7 +329,15 @@ function climbS() {
 function climbF() {
 	document.getElementById('climbS').checked = false;
 }
-
+//Disables the submit button unless there is a team and match number
+function subButton() {
+	if (document.getElementById('matchNo').value == 0 || document.getElementById('teamNo').value == 0) {
+		document.getElementById('sub').disabled = true;
+	}
+	else {
+		document.getElementById('sub').disabled = false;
+	}
+}
 //Sets the value of preload to the selected number of preloaded cells
 function powerCellCounter0() {
 	preload = document.getElementById('powerCell0').value;
@@ -304,3 +351,40 @@ function powerCellCounter2() {
 function powerCellCounter3() {
 	preload = document.getElementById('powerCell3').value;
 }
+
+$(document).ready(function() {
+	$('#sub').click(function() {
+		$.ajax({
+			url: 'processing.php',
+			type: 'POST',
+			data: {
+				pcAutonBotScore_php: pcAutonBotScore,
+				pcAutonOutScore_php: pcAutonOutScore,
+				pcAutonInScore_php: pcAutonInScore,
+				pcAutonBotMiss_php: pcAutonBotMiss,
+				pcAutonTopMiss_php: pcAutonTopMiss,				
+				pcTeleopBotScore_php: pcTeleopBotScore,
+				pcTeleopOutScore_php: pcTeleopOutScore,
+				pcTeleopInScore_php: pcTeleopInScore,
+				pcTeleopBotMiss_php: pcTeleopBotMiss,
+				pcTeleopTopMiss_php: pcTeleopTopMiss,
+				matchNo_php: matchNo,
+				teamNo_php: teamNo,
+				park_php: park,
+				climb_php: climb,
+				generatorLevel_php: generatorLevel,
+				noClimb_php: noClimb,
+				yellow_php: yellow,
+				red_php: red,
+				lostComms_php: lostComms,
+				disabled_php: disabled
+			},
+			success: function(data) {
+				$('#result').html(data);
+			},
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				//case error                    
+			}
+		});
+	});
+});

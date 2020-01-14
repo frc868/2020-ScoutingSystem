@@ -21,18 +21,18 @@
 				<li class="active"><a data-toggle="tab" href="#pregame">Pregame</a></li>
 				<li><a data-toggle="tab" href="#midgame">Midgame</a></li>
 				<li><a data-toggle="tab" href="#endgame">Endgame</a></li>
-				<li><a data-toggle="tab" href="#submit">Submit</a></li>
+				<li><a data-toggle="tab" href="#submit" onClick="subButton()">Submit</a></li>
 			</ul>
 
 			<div class="tab-content">
 				<div id="pregame" class="tab-pane fade in active">
 					<h3>Pregame</h3>
 					<p>Match Qualification # Here:</p>
-					<input type="number" class="textbox" id="matchType" onKeyPress="if(this.value.length==3) return false;" onKeyUp="submit2()" min="0" max = "9999999"/>
+					<input type="number" class="textbox" id="matchNo" onKeyPress="if(this.value.length==3) return false;" onKeyUp="" min="0" max = "9999999"/>
 					<br>
 					<br>
 					<p>Enter Team # Here:</p>
-					<input type="number" class="textbox" id="number" onKeyPress="if(this.value.length==5) return false;" onKeyUp="submit1()" min="0" max = "9999999"/>
+					<input type="number" class="textbox" id="teamNo" onKeyPress="if(this.value.length==5) return false;" onKeyUp="" min="0" max = "9999999"/>
 					<br>
 					<br>
 					<!-- <p>Number of Power Cells That Have Been Preloaded</p>
@@ -52,6 +52,21 @@
 					</div>
 					
 					<div class="container" style = "padding-top: 1em;">
+						<div id="autonButtons">
+							<input type="checkBox" id="initiationLine"/> Crossing Initiation Line
+							<br></br>
+						</div>
+						<div id="teleOpButtons">
+							<input type="checkBox" id="spinNumber"/> Control Panel Spun 3-5 Times
+							<br></br>
+							<input type="checkBox" id="spinColor"/> Control Panel Spun to Color
+							<br></br>
+							<input type="checkBox" id="defense"/> Defense was Played
+							<br></br>
+						</div>
+						<script>
+							document.getElementById("teleOpButtons").style.display = "none";
+						</script>
 						<center>
 							<div class="row">
 								<div style="border-style: solid; " class="col-sm-6 bg-white border border-primary lead">
@@ -121,6 +136,7 @@
 							
 							<!-- Midgame Buttons and Checkboxes for AUTON -->
 							<div class="row" id="autonRow" style="padding-top: 1em;">
+								
 								<div class="col-sm-2 lead" id="auton1">
 									0
 								</div>
@@ -202,18 +218,31 @@
 					</select>
 				</div>
 				
-				<div id="submit" padding: 15px 32px; style = "font-size: 150%;" class="tab-pane fade">
+				<div id="submit" class="tab-pane fade">
 					<form>
-						<h2>Extra Information </h2>
-						<input type = "checkBox" id = "yellowCard" /> Yellow Card
+					
+						<h2 style="padding-bottom: 1em">Extra Information </h2>
+						<label class="container">
+						<input type = "checkBox" id = "yellowCard" class="yellowCard"/> Yellow Card
+						<span class="checkmark"></span>
+						</label>
 						<br>
-						<input type = "checkBox" id = "redCard" /> Red Card
+						<label class="container">
+						<input type = "checkBox" id = "redCard" class="redCard"/> Red Card
+						<span class="checkmark"></span>
+						</label>
 						<br>
-						<input type = "checkBox" id = "lostComm" /> Lost Communication
+						<label class="container">
+						<input type = "checkBox" id = "lostComm" class="lostComm"/> Lost Communication
+						<span class="checkmark"></span>
+						</label>
 						<br>
-						<input type = "checkBox" id = "disabled" /> Disabled
+						<label class="container">
+						<input type = "checkBox" id = "disabled" class="disabled"/> Disabled
+						<span class="checkmark"></span>
+						</label>
 						<br>
-						<input class="buttonsubmit" type="submit" value="Submit" /><br>
+						<input type="submit" value="Submit" id = "sub" onclick = "setVars()" class = "buttonSubmit"> <br>
 						<p id="para"></p>
 					</form>
 
