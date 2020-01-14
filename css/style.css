@@ -1,4 +1,4 @@
-.buttonsubmit{
+.buttonSubmit{
 	border: .3125em solid white;
 	border-radius: 1.375em;
 	height: 6.25em;
@@ -66,6 +66,7 @@
   transform: rotate(45deg);
 }
 
-.buttonsubmit {
+.buttonSubmit{
 	background-color: #337ab7;
 	color: #eee;
+
