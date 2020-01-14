@@ -49,8 +49,8 @@ function setVars() {
 	pcTeleopTopMiss = document.getElementById("teleop3").innerHTML;
 	
 
-	matchNo = document.getElementById("matchType").innerHTML;
-	teamNo = document.getElementById("number").innerHTML;
+	matchNo = document.getElementById("matchNo").value;
+	teamNo = document.getElementById("teamNo").teamNo;
 	park = document.getElementById("ren").checked;
 	climb = document.getElementById("climbS").checked;
 	generatorLevel = document.getElementById("level").checked;
