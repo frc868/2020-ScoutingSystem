@@ -52,14 +52,21 @@
 					</div>
 					
 					<div class="container" style = "padding-top: 1em;">
-						<input type="checkBox" id="auton"/> Crossing Initiation Line
-						<br></br>
-						<input type="checkBox" id="auton"/> Control Panel Spun 3-5 Times
-						<br></br>
-						<input type="checkBox" id="auton"/> Control Panel Spun to Color
-						<br></br>
-						<input type="checkBox" id="auton"/> Defense was Played
-						<br></br>
+						<div id="autonButtons">
+							<input type="checkBox" id="initiationLine"/> Crossing Initiation Line
+							<br></br>
+						</div>
+						<div id="teleOpButtons">
+							<input type="checkBox" id="spinNumber"/> Control Panel Spun 3-5 Times
+							<br></br>
+							<input type="checkBox" id="spinColor"/> Control Panel Spun to Color
+							<br></br>
+							<input type="checkBox" id="defense"/> Defense was Played
+							<br></br>
+						</div>
+						<script>
+							document.getElementById("teleOpButtons").style.display = "none";
+						</script>
 						<center>
 							<div class="row">
 								<div style="border-style: solid; " class="col-sm-6 bg-white border border-primary lead">
