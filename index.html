@@ -12,9 +12,10 @@
 		<link rel="stylesheet" href="css/slider.css">
 		<link rel="stylesheet" href="css/style.css">
 		<script src="js/index.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata&display=swap">
 	</head>
 
-	<body>
+	<body style="font-family: 'Alata', sans-serif;">
 		<div class="container-fluid" style = "width: 95%">
 			<ul class="nav nav-pills">
 				<li class="active"><a data-toggle="tab" href="#pregame">Pregame</a></li>
@@ -27,13 +28,13 @@
 				<div id="pregame" class="tab-pane fade in active">
 					<h3>Pregame</h3>
 					<p>Match Qualification # Here:</p>
-					<input type="number" class="textbox" id="matchType" onKeyPress="if(this.value.length==3) return false;" onKeyUp="submit2()" min="0" max = "999"/>
-					</br>
-					</br>
+					<input type="number" class="textbox" id="matchType" onKeyPress="if(this.value.length==3) return false;" onKeyUp="submit2()" min="0" max = "9999999"/>
+					<br>
+					<br>
 					<p>Enter Team # Here:</p>
-					<input type="number" class="textbox" id="number" onKeyPress="if(this.value.length==5) return false;" onKeyUp="submit1()" min="0" max = "99999"/>
-					</br>
-					</br>
+					<input type="number" class="textbox" id="number" onKeyPress="if(this.value.length==5) return false;" onKeyUp="submit1()" min="0" max = "9999999"/>
+					<br>
+					<br>
 					<!-- <p>Number of Power Cells That Have Been Preloaded</p>
 					<input type="radio" name="numOfCells" id="powerCell0" onClick="powerCellCounter0()" value="0">0</input>
 					<input type="radio" name="numOfCells" id="powerCell1" onClick="powerCellCounter1()" value="1">1</input>
@@ -50,50 +51,55 @@
 					<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="50" data-width="200" data-on="Tele-Op" data-off="Auton">
 					</div>
 					
-					<div class="container" style = "padding-top: 2em;">
+					<div class="container" style = "padding-top: 1em;">
 						<center>
 							<div class="row">
-								<div style="border-style: solid; " class="col-sm-6 bg-info border border-primary lead">
+								<div style="border-style: solid; " class="col-sm-6 bg-white border border-primary lead">
 									Top Goal
 								</div>
-								<div style="border-style: solid;" class="col-sm-4 bg-info border border-primary lead">
+								<div style="border-style: solid;" class="col-sm-4 bg-white border border-primary lead">
 									Bottom Goal
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-sm-2 bg-info ">
-									<img src="innerport.png" height="100px" width= "100px">
+							<div class="row" style="padding-bottom: 1em;">
+								<div class="col-sm-2 bg-white ">
+									<img src="images/innerport.png" height="100px" width= "100px">
 								</div>
-								<div class="col-sm-2 bg-info">
-									<img src="outerport.png" height="100px" width= "100px">
+								<div class="col-sm-2 bg-white">
+									<img src="images/outerport.png" height="100px" width= "100px">
 								</div>
-								<div class="col-sm-2 bg-info ">
-									<img src="cross.png" height="100px" width= "100px">
+								<div class="col-sm-2 bg-white ">
+									<img src="images/cross.png" height="100px" width= "100px">
 								</div>
-								<div class="col-sm-2 bg-info ">
-									<img src="botyes.png" height="100px" width= "100px">
-								</div><div class="col-sm-2 bg-info ">
-									<img src="botno.png" height="100px" width= "100px">
+								<div class="col-sm-2 bg-white ">
+									<img src="images/botyes.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-white ">
+									<img src="images/botno.png" height="100px" width= "100px">
 								</div>
 							</div>
 							<div class="row">
-								<div style="border-style: solid;" class="col-sm-2 bg-info ">
+
+								<div style="border-style: solid;" class="col-sm-2 bg-white ">
 									Top Inner Circle Scored
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info ">
+								<div style="border-style: solid;" class="col-sm-2 bg-white ">
 									Top Outer Circle Scored
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info ">
+								<div style="border-style: solid;" class="col-sm-2 bg-white ">
 									Top Missed
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info">
+								<div style="border-style: solid;" class="col-sm-2 bg-white">
 									Bottom Scored
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-info">
+								<div style="border-style: solid;" class="col-sm-2 bg-white">
 									Bottom Missed
+
 								</div>
 							</div>
+							
 							<br>
+							
 							<div class="row">
 								<div class="col-sm-2" style="border-left-style: solid;">
 									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp1" value = "1" onclick = "counterClick(this.id);">+1</button>
@@ -111,7 +117,10 @@
 									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px" id = "buttonUp5" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
 							</div>
-							<div class="row" id="autonRow">
+							
+							
+							<!-- Midgame Buttons and Checkboxes for AUTON -->
+							<div class="row" id="autonRow" style="padding-top: 1em;">
 								<div class="col-sm-2 lead" id="auton1">
 									-1000
 								</div>
@@ -128,7 +137,9 @@
 									0
 								</div>
 							</div>
-							<div class="row" id="teleopRow" style = "display: none">
+							
+							<!-- Midgame Buttons and Checkboxes for TELEOP -->
+							<div class="row" id="teleopRow" style = "padding-top: 1em; display: none">
 								<div class="col-sm-2 lead" id="teleop1">
 									0
 								</div>
@@ -145,6 +156,8 @@
 									0
 								</div>
 							</div>
+							
+							
 							<div class="row">
 								<div class="col-sm-2">
 									<button type="button" class="btn btn-danger" id = "buttonDown1" value = "-1" onclick = "counterClick(this.id)">-1</button>
@@ -168,18 +181,18 @@
 			
 				<div id="endgame" style = "font-size: 150%;" class="tab-pane fade">
 					<h3>Endgame</h3>
-					<label><input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();">  Rendezvous Point</input></label>
-					<br></br>
-					<br></br>
-					<label><input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled>  Climb Attempt</input></label>
-					<br></br>
-					<label><input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled> Success</input></label>
-					<br></br>
-					<label><input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled>  Failure</input></label>
-					<br></br>
-					<br></br>
-					<label><input type = "checkBox" id = "level" style = "transform: scale(2);">  Generator is level</input></label>
-					<br></br>
+					<label><input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();"/>  Rendezvous Point</label>
+					<br>
+					<br>
+					<label><input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled/>  Climb Attempt</label>
+					<br>
+					<label><input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled/>  Success</label>
+					<br>
+					<label><input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled/>  Failure</label>
+					<br>
+					<br>
+					<label><input type = "checkBox" id = "level" style = "transform: scale(2);"/>  Generator is level</label>
+					<br>
 					<p>Number of robots that climbed:</p>
 					<select id = "roboClimb">
 						<option value = "0">0</option>
@@ -192,14 +205,14 @@
 				<div id="submit" padding: 15px 32px; style = "font-size: 150%;" class="tab-pane fade">
 					<form>
 						<h2>Extra Information </h2>
-						<input type = "checkBox" id = Yellow Card> Yellow Card  </input>
-						<br></br>
-						<input type = "checkBox" id = Red Card > Red Card  </input>
-						<br></br>
-						<input type = "checkBox" id = lost communication  > Lost Communication </input>
-						<br></br>
-						<input type = "checkBox" id = Disabled  > Disabled  </input>
-						<br></br>
+						<input type = "checkBox" id = "yellowCard" /> Yellow Card
+						<br>
+						<input type = "checkBox" id = "redCard" /> Red Card
+						<br>
+						<input type = "checkBox" id = "lostComm" /> Lost Communication
+						<br>
+						<input type = "checkBox" id = "disabled" /> Disabled
+						<br>
 						<input class="buttonsubmit" type="submit" value="Submit" /> <br>
 						<p id="para"></p>
 					</form>
