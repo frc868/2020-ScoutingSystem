@@ -1,0 +1,5 @@
+.checkbox-label input{
+	position: absoulte;
+	opacity: 0;
+	cursor: pointer;
+}
