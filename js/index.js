@@ -48,28 +48,38 @@ function setVars() {
 	pcTeleopBotMiss = document.getElementById("teleop5").innerHTML
 	pcTeleopTopMiss = document.getElementById("teleop3").innerHTML;
 	
-	console.log(pcAutonBotScore);
-	console.log(pcAutonOutScore);
-	console.log(pcAutonInScore);
-	console.log(pcAutonBotMiss);
-	console.log(pcAutonTopMiss);
-
-	console.log(pcTeleopBotScore);
-	console.log(pcTeleopOutScore);
-	console.log(pcTeleopInScore);
-	console.log(pcTeleopBotMiss);
-	console.log(pcTeleopTopMiss);
 
 	matchNo = document.getElementById("matchType").innerHTML;
 	teamNo = document.getElementById("number").innerHTML;
 	park = document.getElementById("ren").checked;
 	climb = document.getElementById("climbS").checked;
 	generatorLevel = document.getElementById("level").checked;
-	noClimb = document.getElementById("roboClimb").innerHTML;
+	noClimb = document.getElementById("roboClimb").value;
 	yellow = document.getElementById("yellowCard").checked;
 	red = document.getElementById("redCard").checked;
 	lostComms = document.getElementById("lostCommunication").checked;
 	disabled = document.getElementById("disabled").checked;
+
+	console.log("pcAutonBotScore" + pcAutonBotScore);
+	console.log("pcAutonOutScore" + pcAutonOutScore);
+	console.log("pcAutonInScore" + pcAutonInScore);
+	console.log("pcAutonBotMiss" + pcAutonBotMiss);
+	console.log("pcAutonTopMiss" + pcAutonTopMiss);
+	console.log("pcTeleopBotScore" + pcTeleopBotScore);
+	console.log("pcTeleopOutScore" + pcTeleopOutScore);
+	console.log("pcTeleopInScore" + pcTeleopInScore);
+	console.log("pcTeleopBotMiss" + pcTeleopBotMiss);
+	console.log("pcTeleopTopMiss" + pcTeleopTopMiss);
+	console.log("matchNo" + matchNo);
+	console.log("teamNo" + teamNo);
+	console.log("park" + park);
+	console.log("climb" + climb);
+	console.log("generatorLevel" + generatorLevel);
+	console.log("noClimb" + noClimb);
+	console.log("yellow" + yellow);
+	console.log("red" + red);
+	console.log("lostComms" + lostComms);
+	console.log("disabled" + disabled);
 
 }
 
