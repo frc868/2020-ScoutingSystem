@@ -50,15 +50,15 @@ function setVars() {
 	pcTeleopTopMiss = document.getElementById("teleop3").innerHTML;
 	
 
-	matchNo = document.getElementById("matchType").innerHTML;
-	teamNo = document.getElementById("number").innerHTML;
+	matchNo = document.getElementById("matchNo").value;
+	teamNo = document.getElementById("teamNo").teamNo;
 	park = document.getElementById("ren").checked;
 	climb = document.getElementById("climbS").checked;
 	generatorLevel = document.getElementById("level").checked;
 	noClimb = document.getElementById("roboClimb").value;
 	yellow = document.getElementById("yellowCard").checked;
 	red = document.getElementById("redCard").checked;
-	lostComms = document.getElementById("lostCommunication").checked;
+	lostComms = document.getElementById("lostComm").checked;
 	disabled = document.getElementById("disabled").checked;
 
 	console.log("pcAutonBotScore" + pcAutonBotScore);
@@ -320,11 +320,11 @@ function climbF() {
 }
 //Disables the submit button unless there is a team and match number
 function subButton() {
-	if (document.getElementById('matchType').value == 0 || document.getElementById('number').value == 0) {
-		document.getElementById('buttonSubmit').disabled = true;
+	if (document.getElementById('matchNo').value == 0 || document.getElementById('teamNo').value == 0) {
+		document.getElementById('sub').disabled = true;
 	}
 	else {
-		document.getElementById('buttonSubmit').disabled = false;
+		document.getElementById('sub').disabled = false;
 	}
 }
 //Sets the value of preload to the selected number of preloaded cells
@@ -340,3 +340,40 @@ function powerCellCounter2() {
 function powerCellCounter3() {
 	preload = document.getElementById('powerCell3').value;
 }
+
+$(document).ready(function() {
+	$('#sub').click(function() {
+		$.ajax({
+			url: 'processing.php',
+			type: 'POST',
+			data: {
+				pcAutonBotScore_php: pcAutonBotScore,
+				pcAutonOutScore_php: pcAutonOutScore,
+				pcAutonInScore_php: pcAutonInScore,
+				pcAutonBotMiss_php: pcAutonBotMiss,
+				pcAutonTopMiss_php: pcAutonTopMiss,				
+				pcTeleopBotScore_php: pcTeleopBotScore,
+				pcTeleopOutScore_php: pcTeleopOutScore,
+				pcTeleopInScore_php: pcTeleopInScore,
+				pcTeleopBotMiss_php: pcTeleopBotMiss,
+				pcTeleopTopMiss_php: pcTeleopTopMiss,
+				matchNo_php: matchNo,
+				teamNo_php: teamNo,
+				park_php: park,
+				climb_php: climb,
+				generatorLevel_php: generatorLevel,
+				noClimb_php: noClimb,
+				yellow_php: yellow,
+				red_php: red,
+				lostComms_php: lostComms,
+				disabled_php: disabled
+			},
+			success: function(data) {
+				$('#result').html(data);
+			},
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				//case error                    
+			}
+		});
+	});
+});
