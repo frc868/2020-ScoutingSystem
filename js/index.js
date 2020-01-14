@@ -1,5 +1,4 @@
 var compId = 0;
-var compId = 0;
 var teamNo = 0;
 var matchNo = 0;
 var preload = 0;
@@ -19,9 +18,15 @@ var pcTeleopTopMiss = 0;
 
 var revolutionsCheck = false;
 var colorCheck = false;
-var limb = false;
+var climb = null;
 var park = false;
 var comments = "";
+var generatorLevel = false;
+var noClimb = 0;
+var yellow;
+var red = false;
+var lostComms = false;
+var disabled = false;
 
 
 var auton = true;
@@ -53,6 +58,18 @@ function setVars() {
 	console.log(pcTeleopInScore);
 	console.log(pcTeleopBotMiss);
 	console.log(pcTeleopTopMiss);
+
+	matchNo = document.getElementById("matchType").innerHTML;
+	teamNo = document.getElementById("number").innerHTML;
+	park = document.getElementById("ren").checked;
+	climb = document.getElementById("climbS").checked;
+	generatorLevel = document.getElementById("level").checked;
+	noClimb = document.getElementById("roboClimb").innerHTML;
+	yellow = document.getElementById("yellowCard").checked;
+	red = document.getElementById("redCard").checked;
+	lostComms = document.getElementById("lostCommunication").checked;
+	disabled = document.getElementById("disabled").checked;
+
 }
 
 function toggleMidgame() {
