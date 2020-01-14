@@ -223,14 +223,28 @@
 				
 				<div id="submit" class="tab-pane fade">
 					<form>
-						<h2>Extra Information </h2>
-						<input type = "checkBox" id = "yellowCard" class = "yellowCard"> Yellow Card
+					
+						<h2 style="padding-bottom: 1em">Extra Information </h2>
+						<label class="container">
+						<input type = "checkBox" id = "yellowCard" class="yellowCard"/> Yellow Card
+						<span class="checkmark"></span>
+						</label>
 						<br>
-						<input type = "checkBox" id = "redCard" class = "redCard"> Red Card
+						<label class="container">
+						<input type = "checkBox" id = "redCard" class="redCard"/> Red Card
+						<span class="checkmark"></span>
+						</label>
 						<br>
-						<input type = "checkBox" id = "lostComm" class = "lostComm"> Lost Communication
+						<label class="container">
+						<input type = "checkBox" id = "lostComm" class="lostComm"/> Lost Communication
+						<span class="checkmark"></span>
+						</label>
 						<br>
-						<input type = "checkBox" id = "disabled" class = "disabled"> Disabled
+						<label class="container">
+						<input type = "checkBox" id = "disabled" class="disabled"/> Disabled
+						<span class="checkmark"></span>
+						</label>
+
 						<br>
 						<input type="submit" value="Submit" id = "sub" onclick = "setVars()" class = "buttonSubmit"> <br>
 						<p id="para"></p>
