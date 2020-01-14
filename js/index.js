@@ -35,6 +35,8 @@ var currentCounters = [];
 var autonCounters = [document.getElementById("auton1"), document.getElementById("auton2"), document.getElementById("auton3"), document.getElementById("auton4"), document.getElementById("auton5")];
 var teleopCounters = [document.getElementById("teleop1"), document.getElementById("teleop2"), document.getElementById("teleop3"), document.getElementById("teleop4"), document.getElementById("teleop5")];
 
+document.getElementById("teleOpButtons").style.display = "none";
+
 //Setting the variables to what they are at the end of the match
 function setVars() {
 	pcAutonBotScore = document.getElementById("auton4").innerHTML;
@@ -81,7 +83,6 @@ function setVars() {
 	console.log("red" + red);
 	console.log("lostComms" + lostComms);
 	console.log("disabled" + disabled);
-
 }
 
 //Allows the toggle button to change the midgame tab from tele-op to auton
@@ -97,6 +98,16 @@ function toggleMidgame() {
 		document.getElementById("autonRow").style.display = "none";
 		document.getElementById("teleopRow").style.display = "block";
 		currentCounters = teleopCounters;
+	}
+	
+	var x = document.getElementById("teleOpButtons");
+	var y = document.getElementById("autonButtons");
+	if(x.style.display == "none"){
+		x.style.display = "";
+		y.style.display = "none";
+	} else{
+		x.style.display = "none";
+		y.style.display = "";
 	}
 }
 
