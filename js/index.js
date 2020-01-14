@@ -331,3 +331,40 @@ function powerCellCounter2() {
 function powerCellCounter3() {
 	preload = document.getElementById('powerCell3').value;
 }
+
+$(document).ready(function() {
+	$('#sub').click(function() {
+		$.ajax({
+			url: 'processing.php',
+			type: 'POST',
+			data: {
+				pcAutonBotScore: pcAutonBotScore,
+				pcAutonOutScore: pcAutonOutScore,
+				pcAutonInScore: pcAutonInScore,
+				pcAutonBotMiss: pcAutonBotMiss,
+				pcAutonTopMiss: pcAutonTopMiss,				
+				pcTeleopBotScore: pcTeleopBotScore,
+				pcTeleopOutScore: pcTeleopOutScore,
+				pcTeleopInScore: pcTeleopInScore,
+				pcTeleopBotMiss: pcTeleopBotMiss,
+				pcTeleopTopMiss: pcTeleopTopMiss,
+				matchNo: matchNo,
+				teamNo: teamNo,
+				park: park,
+				climb: climb,
+				generatorLevel: generatorLevel,
+				noClimb: noClimb,
+				yellow: yellow,
+				red: red,
+				lostComms: lostComms,
+				disabled: disabled
+			},
+			success: function(data) {
+				$('#result').html(data);
+			},
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				//case error                    
+			}
+		});
+	});
+});
