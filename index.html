@@ -197,20 +197,27 @@
 			
 				<div id="endgame" style = "font-size: 150%;" class="tab-pane fade">
 					<h3>Endgame</h3>
-					<label class="container"><input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();"/>  Rendezvous Point <span class="checkmark"></span></label>
-					<br>
-					<br>
-					<label class="container"><input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled/>  Climb Attempt <span class="checkmark"></span></label>
-					<br>
-					<label class="container"><input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled/>  Success <span class="checkmark"></span></label>
-					<br>
-					<label class="container"><input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled/>  Failure <span class="checkmark"></span></label>
-					<br>
-					<input type="range" id="generatorPos" name="generatorPos" min="-10" max="10" step="1" onchange="updateTextInput(this.value)">
-					Position: <input type="text" id="generatorPosText" value="">
-					<br>
-					<label class="container"><input type = "checkBox" id = "level" style = "transform: scale(2);"/>  Generator is level <span class="checkmark"></span></label>
-					<br>
+					<div class="row">
+						<div class="col-sm-4">
+							<label class="container"><input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();"/>  Rendezvous Point <span class="checkmark"></span></label>
+							<br>
+							<br>
+							<label class="container"><input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled/>  Climb Attempt <span class="checkmark"></span></label>
+							<br>
+							<label class="container"><input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled/>  Success <span class="checkmark"></span></label>
+							<br>
+							<label class="container"><input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled/>  Failure <span class="checkmark"></span></label>
+							<br>
+							<br>
+							<label class="container"><input type = "checkBox" id = "level" style = "transform: scale(2);"/>  Generator is level <span class="checkmark"></span></label>
+							<br>
+						</div>
+						<div class="col-sm-4">
+							<center>Shield Generator Position
+							<img src="images/shieldGenerator.png" alt="shieldGenerator" class="shieldGeneratorPic">
+							<input type="range" id="generatorPos" name="generatorPos" min="-20" max="20" step="1" class="shieldGeneratorSlider"></center>
+						</div>
+					</div>
 					<p>Number of robots that climbed:</p>
 					<select style="color:black" id = "roboClimb">
 						<option style="color: black" value = "0">0</option>

@@ -330,11 +330,6 @@ function climbAttempt() {
 		document.getElementById('climbF').checked = false;
 	}
 }
-
-function updateTextInput(val){
-	document.getElementById('generatorPosText').value=val;
-}
-
 function climbS() {
 	document.getElementById('climbF').checked = false;
 }
