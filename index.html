@@ -206,6 +206,8 @@
 					<br>
 					<label class="container"><input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled/>  Failure <span class="checkmark"></span></label>
 					<br>
+					<input type="range" id="generatorPos" name="generatorPos" min="-10" max="10" step="1" onchange="updateTextInput(this.value)">
+					Position: <input type="text" id="generatorPosText" value="">
 					<br>
 					<label class="container"><input type = "checkBox" id = "level" style = "transform: scale(2);"/>  Generator is level <span class="checkmark"></span></label>
 					<br>
