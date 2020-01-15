@@ -72,6 +72,10 @@
   transform: rotate(45deg);
 }
 
+.container:hover input ~ .checkEnd {
+  background-color: #f9f9f9;
+}
+
 .buttonSubmit{
 	background-color: #337ab7;
 	color: #eee;
@@ -81,10 +85,6 @@
 .textbox{
 	width: 15%;
 	font-size: 22px;
-	color: black;
-}
-
-#generatorPosText{
 	color: black;
 }
 

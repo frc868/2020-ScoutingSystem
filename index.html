@@ -199,11 +199,11 @@
 					<label class="container"><input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();"/>  Rendezvous Point <span class="checkmark"></span></label>
 					<br>
 					<br>
-					<label class="container"><input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled/>  Climb Attempt <span class="checkmark"></span></label>
+					<label class="container"><input type = "checkBox" class = "checkEnd" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled/>  Climb Attempt <span class="checkmark"></span></label>
 					<br>
-					<label class="container"><input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled/>  Success <span class="checkmark"></span></label>
+					<label class="container"><input type = "checkBox" class = "checkEnd" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled/>  Success <span class="checkmark"></span></label>
 					<br>
-					<label class="container"><input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled/>  Failure <span class="checkmark"></span></label>
+					<label class="container"><input type = "checkBox" class = "checkEnd" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled/>  Failure <span class="checkmark"></span></label>
 					<br>
 					<input type="range" id="generatorPos" name="generatorPos" min="-10" max="10" step="1" onchange="updateTextInput(this.value)">
 					Position: <input type="text" id="generatorPosText" value="">
