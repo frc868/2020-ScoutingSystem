@@ -20,10 +20,11 @@
 				<li class="active"><a data-toggle="tab" href="#pregame">Pregame</a></li>
 				<li><a data-toggle="tab" href="#midgame">Midgame</a></li>
 				<li><a data-toggle="tab" href="#endgame">Endgame</a></li>
-				<li><a data-toggle="tab" href="#submit" onClick="subButton()">Submit</a></li>
+				<li><a data-toggle="tab" href="#PostGame" onClick="subButton()">PostGame</a></li>
+				<li><a data-toggle="tab" href="#Submit">Submit</a></li>
 			</ul>
 
-			<div class="tab-content">
+			<div class="tab-content" style = "font-size: 135%;" >
 				<div id="pregame" class="tab-pane fade in active">
 					<h3>Pregame</h3>
 					<p>Match Qualification # Here:</p>
@@ -38,9 +39,9 @@
 					<input type="radio" name="numOfCells" id="powerCell0" onClick="powerCellCounter0()" value="0">0</input>
 					<input type="radio" name="numOfCells" id="powerCell1" onClick="powerCellCounter1()" value="1">1</input>
 					<input type="radio" name="numOfCells" id="powerCell2" onClick="powerCellCounter2()" value="2">2</input>
-					<input type="radio" name="numOfCells" id="powerCell3" onClick="powerCellCounter3()" value="3">3</input>
+					<input type="radio" name="numOfCells" id="powerCell3" onClick="powerCellCounter3()" value="3">3</input> -->
 					</br>
-					<div id="test"><p></p></div> -->
+					<div id="test"><p></p></div>
 				</div>
 				
 				<div id="midgame" class="tab-pane fade">
@@ -214,7 +215,7 @@
 						<div class="col-sm-4">
 							Shield Generator Position
 							<img src="images/shieldGenerator.png" alt="shieldGenerator" class="shieldGeneratorPic">
-							<input type="range" id="generatorPos" name="generatorPos" min="-20" max="20" step="1" class="shieldGeneratorSlider"/>
+							<input style="width:450px" type="range" id="generatorPos" name="generatorPos" min="-20" max="20" step="1" class="shieldGeneratorSlider"></center>
 						</div>
 					</div>
 					<p>Number of robots that climbed:</p>
@@ -226,7 +227,7 @@
 					</select>
 				</div>
 				
-				<div id="submit" class="tab-pane fade">
+				<div id="PostGame" class="tab-pane fade">
 					<form>
 					
 						<h2 style="padding-bottom: 1em">Extra Information </h2>
@@ -250,11 +251,15 @@
 						<span class="checkmark"></span>
 						</label>
 						<br>
-						<br>
-						<input type="submit" value="Submit" id = "sub" onclick = "setVars()" class = "buttonSubmit" style="font-size: 22px"> <br>
-						<p id="para"></p>
-					</form>
 
+						<label class="container">
+						<input type = "checkBox" id = "Robot Fell Over" class="Robot Fell Over "/> Robot Fell Over
+						<span class="checkmark"></span>
+						</label>
+						
+						
+					</form>
+					
 					<script type="text/javascript">
 						function getwords() {
 							text = words.value;
@@ -263,7 +268,11 @@
 						}
 					</script>
 				</div>
-			</div>
+				<div id="Submit" class="tab-pane fade">
+				<br><br><br><br>
+				<input type="submit" value="Submit" id = "sub" onclick = "setVars()" class = "buttonSubmit"> <br>
+						<p id="para"></p> 
+				</div>
 		</div>
 	</body>
 </html>

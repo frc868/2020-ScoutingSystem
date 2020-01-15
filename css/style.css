@@ -42,7 +42,7 @@
   background-color: #eee;
 }
 
-.container:hover input ~ .checkmark {
+.container:hover input:not([disabled]) ~ .checkmark {
   background-color: #ccc;
 }
 
@@ -70,10 +70,6 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-
-.container:hover input ~ .checkEnd {
-  background-color: #f9f9f9;
 }
 
 .buttonSubmit{
