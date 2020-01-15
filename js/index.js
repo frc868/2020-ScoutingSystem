@@ -340,6 +340,7 @@ function climbF() {
 function subButton() {
 	if (document.getElementById('matchNo').value == 0 || document.getElementById('teamNo').value == 0) {
 		document.getElementById('sub').disabled = true;
+		alert("There is no match or team number, and you will not be able to submit.")
 	}
 	else {
 		document.getElementById('sub').disabled = false;
