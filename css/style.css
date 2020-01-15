@@ -88,6 +88,11 @@
 	color: black;
 }
 
+.shieldGeneratorSlider{
+	overflow: hidden;
+	width: 50%;
+}
+
 #roboClimb{
 	color: black;
 }
