@@ -109,12 +109,12 @@ function toggleMidgame() {
 	
 	var x = document.getElementById("teleOpButtons");
 	var y = document.getElementById("autonButtons");
-	if(x.style.display == "none"){
-		x.style.display = "";
-		y.style.display = "none";
-	} else{
+	if(auton){
 		x.style.display = "none";
 		y.style.display = "";
+	} else{
+		x.style.display = "";
+		y.style.display = "none";
 	}
 }
 
@@ -330,6 +330,11 @@ function climbAttempt() {
 		document.getElementById('climbF').checked = false;
 	}
 }
+
+function updateTextInput(val){
+	document.getElementById('generatorPosText').value=val;
+}
+
 function climbS() {
 	document.getElementById('climbF').checked = false;
 }

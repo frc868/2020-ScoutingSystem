@@ -77,10 +77,17 @@
 	color: #eee;
 }
 
-#roboClimb{
+
+.textbox{
+	width: 15%;
+	font-size: 22px;
 	color: black;
 }
 
-.textbox{
+#generatorPosText{
+	color: black;
+}
+
+#roboClimb{
 	color: black;
 }
