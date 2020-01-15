@@ -14,10 +14,9 @@
 		<script src="js/index.js"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata&display=swap">
 	</head>
-
 	<body style="font-family: 'Alata', sans-serif; background-image:url('images/star.jpg');color:white;">
-		<div class="container-fluid" style = "width: 95%">
-			<ul class="nav nav-pills">
+		<div class="container-fluid" style = "width: 95%;">
+			<ul class="nav nav-pills" style="font-size: 18px">
 				<li class="active"><a data-toggle="tab" href="#pregame">Pregame</a></li>
 				<li><a data-toggle="tab" href="#midgame">Midgame</a></li>
 				<li><a data-toggle="tab" href="#endgame">Endgame</a></li>
@@ -28,11 +27,11 @@
 				<div id="pregame" class="tab-pane fade in active">
 					<h3>Pregame</h3>
 					<p>Match Qualification # Here:</p>
-					<input type="number" class="textbox" id="matchNo" onKeyPress="if(this.value.length==3) return false;" onKeyUp="" min="0" max = "9999999"/>
+					<input style="color:black" type="number" class="textbox" id="matchNo" onKeyPress="if(this.value.length==3) return false;" onKeyUp="" min="0" max = "9999999"/>
 					<br>
 					<br>
 					<p>Enter Team # Here:</p>
-					<input type="number" class="textbox" id="teamNo" onKeyPress="if(this.value.length==5) return false;" onKeyUp="" min="0" max = "9999999"/>
+					<input style="color:black" type="number" class="textbox" id="teamNo" onKeyPress="if(this.value.length==5) return false;" onKeyUp="" min="0" max = "9999999"/>
 					<br>
 					<br>
 					<!-- <p>Number of Power Cells That Have Been Preloaded</p>
@@ -95,19 +94,19 @@
 							</div>
 							<div class="row">
 
-								<div style="border-style: solid;" class="col-sm-2 bg-white ">
+								<div style="border-style: solid;" class="col-sm-2 bg-white">
 									Top Inner Circle Scored
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-white ">
+								<div style="border-style: solid; " class="col-sm-2 bg-white ">
 									Top Outer Circle Scored
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-white ">
+								<div style="border-style: solid; padding-top: .7em; padding-bottom: .7em;" class="col-sm-2 bg-white">
 									Top Missed
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-white">
+								<div style="border-style: solid; padding-top: .7em; padding-bottom: .7em;" class="col-sm-2 bg-white">
 									Bottom Scored
 								</div>
-								<div style="border-style: solid;" class="col-sm-2 bg-white">
+								<div style="border-style: solid; padding-top: .7em; padding-bottom: .7em;" class="col-sm-2 bg-white">
 									Bottom Missed
 
 								</div>
@@ -206,12 +205,14 @@
 					<br>
 					<label class="container"><input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled/>  Failure <span class="checkmark"></span></label>
 					<br>
+					<input type="range" id="generatorPos" name="generatorPos" min="-10" max="10" step="1" onchange="updateTextInput(this.value)">
+					Position: <input type="text" id="generatorPosText" value="">
 					<br>
 					<label class="container"><input type = "checkBox" id = "level" style = "transform: scale(2);"/>  Generator is level <span class="checkmark"></span></label>
 					<br>
 					<p>Number of robots that climbed:</p>
-					<select id = "roboClimb">
-						<option value = "0">0</option>
+					<select style="color:black" id = "roboClimb">
+						<option style="color: black" value = "0">0</option>
 						<option value = "1">1</option>
 						<option value = "2">2</option>
 						<option value = "3">3</option>
@@ -242,7 +243,8 @@
 						<span class="checkmark"></span>
 						</label>
 						<br>
-						<input type="submit" value="Submit" id = "sub" onclick = "setVars()" class = "buttonSubmit"> <br>
+						<br>
+						<input type="submit" value="Submit" id = "sub" onclick = "setVars()" class = "buttonSubmit" style="font-size: 22px"> <br>
 						<p id="para"></p>
 					</form>
 
