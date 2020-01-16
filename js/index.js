@@ -396,6 +396,12 @@ function subButton() {
 		team = true;
 	}
 	
+	if (document.getElementById('sGSlid').style.display == "block") {
+		document.getElementById('climbCheck').innerHTML = "Make sure to move the slider to the position the robot climbed at!";
+	} else {
+		document.getElementById('climbCheck').innerHTML = "";
+	}
+	
 	if (team & match) {
 		document.getElementById('sub').disabled = false;
 	}
