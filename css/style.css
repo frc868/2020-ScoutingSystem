@@ -121,3 +121,24 @@
 #roboClimb{
 	color: black;
 }
+
+.slider{
+	-webkit-appearance: none;
+	background: gray;
+	outline: none;
+}
+
+.slider::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	appearance: none;
+	width: 90px;
+	height: 20px;
+	background: #1453d1;
+}
+
+.slider::-moz-range-thumb{
+	width: 10px;
+	height: 20px;
+	background: #4CAF50;
+	cursor: pointer;
+}
