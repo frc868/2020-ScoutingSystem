@@ -348,13 +348,13 @@ function renPoint() {
 		document.getElementById('climbA').checked = false;
 		document.getElementById('climbS').checked = false;
 		document.getElementById('climbF').checked = false;
+		document.getElementById("sGSlid").style.display = "none";
 	}
 }
 //Makes it so that the success and failure buttons are enabled when climb attempt is checked and disabled when climb attempt is not checked
 function climbAttempt() {
 	document.getElementById('climbS').disabled = false;
 	document.getElementById('climbF').disabled = false;
-	document.getElementById("sGSlid").style.display = "block";
 	if (document.getElementById('climbA').checked == false) {
 		document.getElementById('climbS').disabled = true;
 		document.getElementById('climbF').disabled = true;
@@ -365,9 +365,16 @@ function climbAttempt() {
 }
 function climbS() {
 	document.getElementById('climbF').checked = false;
+	document.getElementById("sGSlid").style.display = "block";
+	if (document.getElementById('climbS').checked == false) {
+		document.getElementById("sGSlid").style.display = "none";
+	}
 }
 function climbF() {
 	document.getElementById('climbS').checked = false;
+	if (document.getElementById('climbS').checked == false) {
+		document.getElementById("sGSlid").style.display = "none";
+	}
 }
 //Disables the submit button unless there is a team and match number
 function subButton() {
@@ -387,6 +394,12 @@ function subButton() {
 	} else {
 		document.getElementById('teamCheck').innerHTML = "";
 		team = true;
+	}
+	
+	if (document.getElementById('sGSlid').style.display == "block") {
+		document.getElementById('climbCheck').innerHTML = "Make sure to move the slider to the position the robot climbed at!";
+	} else {
+		document.getElementById('climbCheck').innerHTML = "";
 	}
 	
 	if (team & match) {
