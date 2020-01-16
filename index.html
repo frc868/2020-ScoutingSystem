@@ -7,161 +7,269 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+		<link rel="stylesheet" href="css/slider.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/index.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata&display=swap">
 	</head>
-	
-	<body>
-
-		<div class="container-fluid" style = "width: 95%">
-			<ul class="nav nav-pills">
+	<body style="font-family: 'Alata', sans-serif; background-image:url('images/star.jpg');color:white;">
+		<div class="container-fluid" style = "width: 95%;">
+			<ul class="nav nav-pills" style="font-size: 18px">
 				<li class="active"><a data-toggle="tab" href="#pregame">Pregame</a></li>
-				<li><a data-toggle="tab" href="#midgame">Tele-Op</a></li>
+				<li><a data-toggle="tab" href="#midgame">Midgame</a></li>
 				<li><a data-toggle="tab" href="#endgame">Endgame</a></li>
-				<li><a data-toggle="tab" href="#submit">Submit</a></li>
+				<li><a data-toggle="tab" href="#PostGame" onClick="">Postgame</a></li>
+				<li><a data-toggle="tab" href="#Submit" onclick = "subButton();">Submit</a></li>
 			</ul>
 
-			<div class="tab-content">
+			<div class="tab-content" style = "font-size: 135%;" >
 				<div id="pregame" class="tab-pane fade in active">
 					<h3>Pregame</h3>
 					<p>Match Qualification # Here:</p>
-					<input type="number" class="textbox" id="matchType" onKeyPress="if(this.value.length==3) return false;" onKeyUp="submit2()" min="0" max = "999"/>
-					</br>
-					</br>
+					<input style="color:black" type="number" class="textbox" id="matchNo" onKeyPress="if(this.value.length==3) return false;" onKeyUp="" min="0" max = "9999999"/>
+					<br>
+					<br>
 					<p>Enter Team # Here:</p>
-					<input type="number" class="textbox" id="number" onKeyPress="if(this.value.length==5) return false;" onKeyUp="submit1()" min="0" max = "99999"/>
+					<input style="color:black" type="number" class="textbox" id="teamNo" onKeyPress="if(this.value.length==5) return false;" onkeyup="filterFunc(); filterCheck()"  min="0" max = "9999999"/>
+					<ul id="teamNoList"  style = "display: none">
+					  <li><a id = "868" href="#" onclick = "numberClick(this.id)">868</a></li>
+					  <li><a id = "837" href="#" onclick = "numberClick(this.id)">837</a></li>
+					  <li><a id = "1321" href="#" onclick = "numberClick(this.id)">1321</a></li>
+					  <li><a id = "9334" href="#" onclick = "numberClick(this.id)">9334</a></li>
+					  <li><a id = "234" href="#" onclick = "numberClick(this.id)">234</a></li>
+					  <li><a id = "6956" href="#" onclick = "numberClick(this.id)">6956</a></li>
+					  <li><a id = "7457" href="#" onclick = "numberClick(this.id)">7457</a></li>
+					</ul>
+					<br>
+					<br>
+					<!-- <p>Number of Power Cells That Have Been Preloaded</p>
+					<input type="radio" name="numOfCells" id="powerCell0" onClick="powerCellCounter0()" value="0">0</input>
+					<input type="radio" name="numOfCells" id="powerCell1" onClick="powerCellCounter1()" value="1">1</input>
+					<input type="radio" name="numOfCells" id="powerCell2" onClick="powerCellCounter2()" value="2">2</input>
+					<input type="radio" name="numOfCells" id="powerCell3" onClick="powerCellCounter3()" value="3">3</input> -->
 					</br>
-					</br>
-					<p>Number of Power Cells That Have Been Preloaded</p>
-					<input type="radio" name="numOfCells" value="0">0
-					<input type="radio" name="numOfCells" value="1">1
-					<input type="radio" name="numOfCells" value="2">2
-					<input type="radio" name="numOfCells" value="3">3
+					<div id="test"><p></p></div>
 				</div>
 				
 				<div id="midgame" class="tab-pane fade">
-					<h3>Tele-Op</h3>
-					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-					<div class="container">
+					<h3 onclick="setVars()">Midgame</h3>
+					
+					<div onclick="toggleMidgame()" class = "col-sm-4">
+						<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="50" data-width="200" data-on="Tele-Op" data-off="Auton">
+					</div>
+					<br>
+					<div class = "col-sm-6">
+						<div id="autonButtons">
+							<label class="container"><input type="checkBox" id="initiationLine"/> Crossing Initiation Line <span class="checkmark"></span> </label>
+							<br></br>
+						</div>
+						<div id="teleOpButtons">
+							<label class="container"><input type="checkBox" id="spinNumber"/> Control Panel Spun 3-5 Times With Precision <span class="checkmark"></span></label>
+							<label class="container"><input type="checkBox" id="spinColor"/> Control Panel Spun to Specified Color <span class="checkmark"></span></label>
+							<label class="container"><input type="checkBox" id="defense"/> Defense was Played <span class="checkmark"></span></label>
+							<br></br>
+						</div>
+					</div>
+					
+					<div class="container" style = "padding-top: 1em;">
+						<script>
+							document.getElementById("teleOpButtons").style.display = "none";
+						</script>
 						<center>
 							<div class="row">
-								<div class="col-md-6 bg-info border border-primary">
-									top goal
+								<div style="border-style: solid; " class="col-sm-6 bg-white border border-primary lead">
+									Top Goal
 								</div>
-								<div class="col-md-4 bg-info border border-primary">
-									bottom goal
+								<div style="border-style: solid;" class="col-sm-4 bg-white border border-primary lead">
+									Bottom Goal
+								</div>
+							</div>
+							<div class="row" style="padding-bottom: 1em;">
+								<div class="col-sm-2 bg-white ">
+									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/innerport.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-white">
+									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/outerport.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-white ">
+									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/cross.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-white ">
+									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/botyes.png" height="100px" width= "100px">
+								</div>
+								<div class="col-sm-2 bg-white ">
+									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/botno.png" height="100px" width= "100px">
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-2 bg-info border border-primary">
-									inner
+
+								<div style="border-style: solid;" class="col-sm-2 bg-white">
+									Top Inner Circle Scored
 								</div>
-								<div class="col-md-2 bg-info border border-primary">
-									outer
+								<div style="border-style: solid; " class="col-sm-2 bg-white ">
+									Top Outer Circle Scored
 								</div>
-								<div class="col-md-2 bg-info border border-primary">
-									miss
+								<div style="border-style: solid; padding-top: .7em; padding-bottom: .7em;" class="col-sm-2 bg-white">
+									Top Missed
 								</div>
-								<div class="col-md-2 bg-info border border-primary">
-									made
+								<div style="border-style: solid; padding-top: .7em; padding-bottom: .7em;" class="col-sm-2 bg-white">
+									Bottom Scored
 								</div>
-								<div class="col-md-2 bg-info border border-primary">
-									miss
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-2">
-									<button type="button" class="btn btn-success">+1</button>
-								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-success">+1</button>
-								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-success">+1</button>
-								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-success">+1</button>
-								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-success">+1</button>
+								<div style="border-style: solid; padding-top: .7em; padding-bottom: .7em;" class="col-sm-2 bg-white">
+									Bottom Missed
+
 								</div>
 							</div>
+							
+							<br>
+							
 							<div class="row">
-								<div class="col-md-2" id="auton1">
-									a
+								<div class="col-sm-2" style="border-left-style: solid;">
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px; font-size: 22px;" id = "buttonUp1" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
-								<div class="col-md-2" id="auton2">
-									b
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px; font-size: 22px;" id = "buttonUp2" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
-								<div class="col-md-2" id="auton3">
-									c
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px; font-size: 22px;" id = "buttonUp3" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
-								<div class="col-md-2" id="auton4">
-									d
+								<div class="col-sm-2" style="border-left-style: solid;">
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px; font-size: 22px;" id = "buttonUp4" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
-								<div class="col-md-2" id="auton5">
-									e
+								<div class="col-sm-2" style="border-right-style: solid;">
+									<button type="button" class="btn btn-success" style = "width: 125px; height: 65px; font-size: 22px;" id = "buttonUp5" value = "1" onclick = "counterClick(this.id);">+1</button>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-md-2" id="teleop1">
-									a
+							
+							
+							<!-- Midgame Buttons and Checkboxes for AUTON -->
+							<div class="row" id="autonRow" style="padding-top: 1em;">
+								
+								<div class="col-sm-2 lead" id="auton1">
+									0
 								</div>
-								<div class="col-md-2" id="teleop2">
-									b
+								<div class="col-sm-2 lead" id="auton2">
+									0
 								</div>
-								<div class="col-md-2" id="teleop3">
-									c
+								<div class="col-sm-2 lead" id="auton3">
+									0
 								</div>
-								<div class="col-md-2" id="teleop4">
-									d
+								<div class="col-sm-2 lead" id="auton4">
+									0
 								</div>
-								<div class="col-md-2" id="teleop5">
-									e
+								<div class="col-sm-2 lead" id="auton5">
+									0
 								</div>
 							</div>
+							
+							<!-- Midgame Buttons and Checkboxes for TELEOP -->
+							<div class="row" id="teleopRow" style = "padding-top: 1em; display: none">
+								<div class="col-sm-2 lead" id="teleop1">
+									0
+								</div>
+								<div class="col-sm-2 lead" id="teleop2">
+									0
+								</div>
+								<div class="col-sm-2 lead" id="teleop3">
+									0
+								</div>
+								<div class="col-sm-2 lead" id="teleop4">
+									0
+								</div>
+								<div class="col-sm-2 lead" id="teleop5">
+									0
+								</div>
+							</div>
+							
+							
 							<div class="row">
-								<div class="col-md-2">
-									<button type="button" class="btn btn-danger">-1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown1" value = "-1" onclick = "counterClick(this.id)" style = "font-size: 22px;">-1</button>
 								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-danger">-1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown2" value = "-1" onclick = "counterClick(this.id)" style = "font-size: 22px;">-1</button>
 								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-danger">-1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown3" value = "-1" onclick = "counterClick(this.id)" style = "font-size: 22px;">-1</button>
 								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-danger">-1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown4" value = "-1" onclick = "counterClick(this.id)" style = "font-size: 22px;">-1</button>
 								</div>
-								<div class="col-md-2">
-									<button type="button" class="btn btn-danger">-1</button>
+								<div class="col-sm-2">
+									<button type="button" class="btn btn-danger" id = "buttonDown5" value = "-1" onclick = "counterClick(this.id)" style = "font-size: 22px;">-1</button>
 								</div>
 							</div>
 						</center>
 					</div>
 				</div>
-				
-				<div id="endgame" class="tab-pane fade">
-					<h4 class="panel-title h4">Endgame</h4>
-					<input type = "checkBox">Rendezvous Point</input>
-					<br></br>
-					<input type = "checkBox" onClick = "climbAttempt()">Climb Attempt</input>
-					<input type = "checkBox" id = "climbS" disabled>Success</input>
-					<input type = "checkBox" id = "climbF" disabled>Failure</input>
-					<script type = "text/javascript">
-						//put this here because the js is messed up
-						function climbAttempt() {
-							document.getElementById('climbS').disabled = false;
-							document.getElementById('climbF').disabled = false;
-						}
-					</script>
+			
+				<div id="endgame" style = "font-size: 150%;" class="tab-pane fade">
+					<h3>Endgame</h3>
+					<div class="row">
+						<div class="col-sm-4">
+							<label class="container"><input type = "checkBox" id = "ren" style = "transform: scale(2);" onClick = "renPoint();"/>  Rendezvous Point <span class="checkmark"></span></label>
+							<br>
+							<br>
+							<label class="container"><input type = "checkBox" id = "climbA" style = "transform: scale(2);" onClick = "climbAttempt()" disabled/>  Climb Attempt <span class="checkmark"></span></label>
+							<br>
+							<label class="container"><input type = "checkBox" id = "climbS" style = "transform: scale(2);" onClick = "climbS()" disabled/>  Success <span class="checkmark"></span></label>
+							<br>
+							<label class="container"><input type = "checkBox" id = "climbF" style = "transform: scale(2);" onClick = "climbF()" disabled/>  Failure <span class="checkmark"></span></label>
+							<br>
+							<br>
+							<label class="container"><input type = "checkBox" id = "level" style = "transform: scale(2);"/>  Generator is level <span class="checkmark"></span></label>
+							<br>
+						</div>
+						<div class="col-sm-4" id = "sGSlid" style = "display: none">
+							Climb Attempt Position
+							<img src="images/shieldGenerator.png" alt="shieldGenerator" class="shieldGeneratorPic">
+							<input style="width:450px" type="range" id="generatorPos" name="generatorPos" min="-3" max="3" step="1" class="shieldGeneratorSlider"></center>
+						</div>
+					</div>
+					<p>Number of robots that climbed:</p>
+					<select style="color:black" id = "roboClimb">
+						<option style="color: black" value = "0">0</option>
+						<option value = "1">1</option>
+						<option value = "2">2</option>
+						<option value = "3">3</option>
+					</select>
 				</div>
 				
-				<div id="submit" class="tab-pane fade">
+				<div id="PostGame" class="tab-pane fade">
 					<form>
-						<textarea id="words" rows="5" cols="80"></textarea>
-						<input class="buttonsubmit" type="submit" value="Submit" /> <br>
-						<p id="para"></p>
-					</form>
+					
+						<h2 style="padding-bottom: 1em">Extra Information </h2>
+						<label class="container">
+						<input type = "checkBox" id = "yellowCard" class="yellowCard"/> Yellow Card
+						<span class="checkmark"></span>
+						</label>
+						<br>
+						<label class="container">
+						<input type = "checkBox" id = "redCard" class="redCard"/> Red Card
+						<span class="checkmark"></span>
+						</label>
+						<br>
+						<label class="container">
+						<input type = "checkBox" id = "lostComm" class="lostComm"/> Lost Communication
+						<span class="checkmark"></span>
+						</label>
+						<br>
+						<label class="container">
+						<input type = "checkBox" id = "disabled" class="disabled"/> Disabled
+						<span class="checkmark"></span>
+						</label>
+						<br>
 
+						<label class="container">
+						<input type = "checkBox" id = "Robot Fell Over" class="Robot Fell Over "/> Robot Fell Over
+						<span class="checkmark"></span>
+						</label>
+						
+						
+					</form>
+					
 					<script type="text/javascript">
 						function getwords() {
 							text = words.value;
@@ -170,8 +278,12 @@
 						}
 					</script>
 				</div>
-			</div>
+				<div id="Submit" class="tab-pane fade">
+				<h2 id = "matchCheck" style = "color: red"></h2>
+				<h2 id = "teamCheck" style = "color: red"></h2>
+				<input type="submit" value="Submit" id = "sub" onclick = "setVars()" class = "buttonSubmit"> <br>
+						<p id="para"></p> 
+				</div>
 		</div>
-
 	</body>
 </html>
