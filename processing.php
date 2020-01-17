@@ -48,7 +48,8 @@
 	$comments = $_POST[comments_php];
 	
 	//echo $matchNo. $teamNo. $compId. $sandstormnoOfCargo. $sandstormnoOfHatch. $teleop_noOfCargo. $teleop_noOfHatch. $comments;
-	$sql = "INSERT INTO scoutingTest(matchNo, teamNo, pcAutonBotScore, pcAutonOutScore, pcAutonInScore, pcAutonBotMiss, pcAutonTopMiss, pcTeleopBotScore, pcTeleopOutScore, pcTeleopInScore, pcTeleopBotMiss, pcTeleopTopMiss, revolutionsCheck, colorCheck, defense, moveStart, park, climb, generatorLevel, noClimb, climbPos, yellow, red, lostComms, disabled, fall, comments) VALUES ()";
+	$sql = "INSERT INTO scoutingData(matchNo, teamNo, pcAutonBotScore, pcAutonOutScore, pcAutonInScore, pcAutonBotMiss, pcAutonTopMiss, pcTeleopBotScore, pcTeleopOutScore, pcTeleopInScore, pcTeleopBotMiss, pcTeleopTopMiss, revolutionsCheck, colorCheck, defense, moveStart, park, climb, generatorLevel, noClimb, climbPos, yellow, red, lostComms, disabled, fall, comments) 
+	VALUES ($matchNo, $teamNo, $pcAutonBotScore, $pcAutonOutScore, $pcAutonInScore, $pcAutonBotMiss, $pcAutonTopMiss, $pcTeleopBotScore, $pcTeleopOutScore, $pcTeleopInScore, $pcTeleopBotMiss, $pcTeleopTopMiss, $revolutionsCheck, $colorCheck, $defense, $moveStart, $park, $climb, $generatorLevel, $noClimb, $climbPos, $yellow, $red, $lostComms, $disabled, $fall, $comments)";
 	
 	
 	//echo "Worked";
