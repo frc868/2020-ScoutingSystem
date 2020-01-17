@@ -409,7 +409,7 @@ function powerCellCounter3() {
 $(document).ready(function() {
 	$('#sub').click(function() {
 		$.ajax({
-			url: '../processing.php',
+			url: '../scouting/processing.php',
 			type: 'POST',
 			data: {
 				pcAutonBotScore_php: pcAutonBotScore,

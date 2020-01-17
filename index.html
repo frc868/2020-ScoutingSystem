@@ -55,25 +55,26 @@
 				
 				<div id="midgame" class="tab-pane fade">
 					<h3 onclick="setVars()">Midgame</h3>
-					
-					<div onclick="toggleMidgame()" class = "col-sm-4">
-						<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="50" data-width="200" data-on="Tele-Op" data-off="Auton">
-					</div>
-					<br>
-					<div class = "col-sm-4">
-						<div id="autonButtons">
-							<label class="container"><input type="checkBox" id="initiationLine"/> Crossing Initiation Line <span class="checkmark"></span> </label>
-							<br></br>
+					<div class = "row">
+						<div onclick="toggleMidgame()" class = "col-sm-4">
+							<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="50" data-width="200" data-on="Tele-Op" data-off="Auton">
 						</div>
-						<div id="teleOpButtons">
-							<label class="container"><input type="checkBox" id="spinNumber"/> Control Panel Spun 3-5 Times With Precision <span class="checkmark"></span></label>
-							<label class="container"><input type="checkBox" id="spinColor"/> Control Panel Spun to Specified Color <span class="checkmark"></span></label>
-							<label class="container"><input type="checkBox" id="defense"/> Defense was Played <span class="checkmark"></span></label>
-							<br></br>
+						<br>
+						<div class = "col-sm-4">
+							<div id="autonButtons">
+								<label class="container"><input type="checkBox" id="initiationLine"/> Crossing Initiation Line <span class="checkmark"></span> </label>
+								<br></br>
+							</div>
+							<div id="teleOpButtons">
+								<label class="container"><input type="checkBox" id="spinNumber"/> Control Panel Spun 3-5 Times With Precision <span class="checkmark"></span></label>
+								<label class="container"><input type="checkBox" id="spinColor"/> Control Panel Spun to Specified Color <span class="checkmark"></span></label>
+								<label class="container"><input type="checkBox" id="defense"/> Defense was Played <span class="checkmark"></span></label>
+								<br></br>
+							</div>
 						</div>
 					</div>
 					
-					<div class="container" style = "padding-top: 1em;">
+					<div class="row container" style = "padding-top: 1em;">
 						<script>
 							document.getElementById("teleOpButtons").style.display = "none";
 						</script>
@@ -88,19 +89,19 @@
 							</div>
 							<div class="row" style="padding-bottom: 1em;">
 								<div class="col-sm-2 bg-white ">
-									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/innerport.png" height="100px" width= "100px">
+									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/innerport.PNG" height="100px" width= "100px">
 								</div>
 								<div class="col-sm-2 bg-white">
-									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/outerport.png" height="100px" width= "100px">
+									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/outerport.PNG" height="100px" width= "100px">
 								</div>
 								<div class="col-sm-2 bg-white ">
 									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/cross.png" height="100px" width= "100px">
 								</div>
 								<div class="col-sm-2 bg-white ">
-									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/botyes.png" height="100px" width= "100px">
+									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/botyes.PNG" height="100px" width= "100px">
 								</div>
 								<div class="col-sm-2 bg-white ">
-									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/botno.png" height="100px" width= "100px">
+									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/botno.PNG" height="100px" width= "100px">
 								</div>
 							</div>
 							<div class="row">
