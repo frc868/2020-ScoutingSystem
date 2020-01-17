@@ -55,6 +55,7 @@
 				
 				<div id="midgame" class="tab-pane fade">
 					<h3 onclick="setVars()">Midgame</h3>
+<<<<<<< HEAD
 					
 					<div onclick="toggleMidgame()" class = "col-sm-4">
 						<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="50" data-width="200" data-on="Tele-Op" data-off="Auton">
@@ -83,10 +84,9 @@
 								<span class="checkmark"></span>
 							</label>
 							<br></br>
-						</div>
 					</div>-->
 					
-					<div class="container" style = "padding-top: 1em;">
+					<div class="row container" style = "padding-top: 1em;">
 						<script>
 							document.getElementById("teleOpButtons").style.display = "none";
 						</script>
@@ -101,19 +101,19 @@
 							</div>
 							<div class="row" style="padding-bottom: 1em;">
 								<div class="col-sm-2 bg-white ">
-									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/innerport.png" height="100px" width= "100px">
+									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/innerport.PNG" height="100px" width= "100px">
 								</div>
 								<div class="col-sm-2 bg-white">
-									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/outerport.png" height="100px" width= "100px">
+									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/outerport.PNG" height="100px" width= "100px">
 								</div>
 								<div class="col-sm-2 bg-white ">
 									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/cross.png" height="100px" width= "100px">
 								</div>
 								<div class="col-sm-2 bg-white ">
-									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/botyes.png" height="100px" width= "100px">
+									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/botyes.PNG" height="100px" width= "100px">
 								</div>
 								<div class="col-sm-2 bg-white ">
-									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/botno.png" height="100px" width= "100px">
+									<img style="border-style:solid; border-color:white; border-width:5px;" src="images/botno.PNG" height="100px" width= "100px">
 								</div>
 							</div>
 							<div class="row">
@@ -275,12 +275,12 @@
 							</label>
 							<br>
 							<label class="container">
-								<input type = "checkBox" id = "Robot Fell Over" class="Robot Fell Over "/> Robot Fell Over
+								<input type = "checkBox" id = "fall" class="Robot Fell Over "/> Robot Fell Over
 								<span class="checkmark"></span>
 							</label>
 						</div>
 						<div> 	<br> <br>  <br> <br> <br>
-							<p><font color="black"><textarea rows="4" cols="60" align="down" placeholder="Add Comments Here:"></textarea></font></p>
+							<p><font color="black"><textarea rows="4" cols="60" align="down" id = "comments" placeholder="Add Comments Here:"></textarea></font></p>
 						</div>
 						</form>
 					
@@ -295,9 +295,8 @@
 				<div id="Submit" class="tab-pane fade">
 				<h2 id = "matchCheck" style = "color: red"></h2>
 				<h2 id = "teamCheck" style = "color: red"></h2>
-				<h2 id = "climbCheck" style = "color: red"></h2>
 				<input type="submit" value="Submit" id = "sub" onclick = "setVars()" class = "buttonSubmit"> <br>
-						<p id="para"></p> 
+						<p id="para"></p>
 				</div>
 		</div>
 	</body>
