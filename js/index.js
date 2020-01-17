@@ -30,7 +30,9 @@ var yellow;
 var red = false;
 var lostComms = false;
 var disabled = false;
+var fall = false;
 var climbPos = 0;
+var comments = "";
 
 
 var auton = true;
@@ -100,27 +102,11 @@ function setVars() {
 	colorCheck = document.getElementById("spinColor").checked;
 	defense = document.getElementById("defense").checked;
 	moveStart = document.getElementById("initiationLine").checked;
+	fall = document.getElementById("fall").checked;
+	
+	comments = document.getElementById("comments").value;
 
-	console.log("pcAutonBotScore" + pcAutonBotScore);
-	console.log("pcAutonOutScore" + pcAutonOutScore);
-	console.log("pcAutonInScore" + pcAutonInScore);
-	console.log("pcAutonBotMiss" + pcAutonBotMiss);
-	console.log("pcAutonTopMiss" + pcAutonTopMiss);
-	console.log("pcTeleopBotScore" + pcTeleopBotScore);
-	console.log("pcTeleopOutScore" + pcTeleopOutScore);
-	console.log("pcTeleopInScore" + pcTeleopInScore);
-	console.log("pcTeleopBotMiss" + pcTeleopBotMiss);
-	console.log("pcTeleopTopMiss" + pcTeleopTopMiss);
-	console.log("matchNo" + matchNo);
-	console.log("teamNo" + teamNo);
-	console.log("park" + park);
-	console.log("climb" + climb);
-	console.log("generatorLevel" + generatorLevel);
-	console.log("noClimb" + noClimb);
-	console.log("yellow" + yellow);
-	console.log("red" + red);
-	console.log("lostComms" + lostComms);
-	console.log("disabled" + disabled);
+	console.log("pcAutonBotScore" + climbPos);
 }
 
 //Allows the toggle button to change the midgame tab from tele-op to auton
@@ -396,11 +382,11 @@ function subButton() {
 		team = true;
 	}
 	
-	if (document.getElementById('sGSlid').style.display == "block") {
+	/* if (document.getElementById('sGSlid').style.display == "block") {
 		document.getElementById('climbCheck').innerHTML = "Make sure to move the slider to the position the robot climbed at!";
 	} else {
 		document.getElementById('climbCheck').innerHTML = "";
-	}
+	} */
 	
 	if (team & match) {
 		document.getElementById('sub').disabled = false;
@@ -423,14 +409,14 @@ function powerCellCounter3() {
 $(document).ready(function() {
 	$('#sub').click(function() {
 		$.ajax({
-			url: 'processing.php',
+			url: '../processing.php',
 			type: 'POST',
 			data: {
 				pcAutonBotScore_php: pcAutonBotScore,
 				pcAutonOutScore_php: pcAutonOutScore,
 				pcAutonInScore_php: pcAutonInScore,
 				pcAutonBotMiss_php: pcAutonBotMiss,
-				pcAutonTopMiss_php: pcAutonTopMiss,				
+				pcAutonTopMiss_php: pcAutonTopMiss,
 				pcTeleopBotScore_php: pcTeleopBotScore,
 				pcTeleopOutScore_php: pcTeleopOutScore,
 				pcTeleopInScore_php: pcTeleopInScore,
@@ -450,13 +436,15 @@ $(document).ready(function() {
 				revolutionsCheck_php: revolutionsCheck,
 				colorCheck_php: colorCheck,
 				defense_php: defense,
-				moveStart_php: moveStart
+				moveStart_php: moveStart,
+				fall_php: fall,
+				comments_php: comments
 			},
 			success: function(data) {
 				$('#result').html(data);
 			},
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
-				//case error                    
+				//case error
 			}
 		});
 	});
