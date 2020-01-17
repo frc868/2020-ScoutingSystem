@@ -371,7 +371,7 @@ function subButton() {
 		document.getElementById('matchCheck').innerHTML = "Did not enter match number!";
 	} else {
 		document.getElementById('matchCheck').innerHTML = "";
-		match  = true;
+		match = true;
 	}
 	
 	if (document.getElementById('teamNo').value == 0) {
@@ -382,11 +382,9 @@ function subButton() {
 		team = true;
 	}
 	
-	/* if (document.getElementById('sGSlid').style.display == "block") {
-		document.getElementById('climbCheck').innerHTML = "Make sure to move the slider to the position the robot climbed at!";
-	} else {
-		document.getElementById('climbCheck').innerHTML = "";
-	} */
+	if (document.getElementById('sGSlid').style.display == "block") {
+		alert("Make sure to specify where the robot climbed!");
+	}
 	
 	if (team & match) {
 		document.getElementById('sub').disabled = false;
