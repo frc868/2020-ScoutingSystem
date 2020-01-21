@@ -31,8 +31,10 @@
 	height: 6.25em;
 	width: 50%;
 }
-/* Customize the label (the container) */
+
+/* The container */
 .container {
+  display: block;
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
@@ -63,32 +65,29 @@
   background-color: #eee;
 }
 
-.container:hover input:not([disabled]) ~ .checkmark {
-  background-color: #77bcf7;
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
 }
 
-.container:hover input:[disabled] ~ .checkmark {
-  background-color: red;
-}
-
-.container input[type=checkbox][disabled] ~ .checkmark{
-  background-color: #808080;
-}
-
+/* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #337ab7;
+  background-color: #2196F3;
 }
 
+/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
   content: "";
-  position:relative;
+  position: absolute;
   display: none;
 }
 
+/* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
   display: block;
 }
 
+/* Style the checkmark/indicator */
 .container .checkmark:after {
   left: 9px;
   top: 5px;
