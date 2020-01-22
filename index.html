@@ -28,11 +28,11 @@
 				<div id="pregame" class="tab-pane fade in active">
 					<h3>Pregame</h3>
 					<p>Match Qualification # Here:</p>
-					<input style="color:black" type="number" class="textbox" id="matchNo" onKeyPress="if(this.value.length==3) return false;" onKeyUp="" min="0" max = "9999999"/>
+					<input style="color:black" type="number" class="textbox" id="matchNo" onKeyPress="if(this.value.length==3) return false; return event.charCode >= 48 && event.charCode <= 57;" onKeyUp="" min="0" max = "9999999"/>
 					<br>
 					<br>
 					<p>Enter Team # Here:</p>
-					<input style="color:black" type="number" class="textbox" id="teamNo" onKeyPress="if(this.value.length==5) return false;" onkeyup="filterFunc(); filterCheck()"  min="0" max = "9999999"/>
+					<input style="color:black" type="number" class="textbox" id="teamNo" onKeyPress="if(this.value.length==5) return false; return event.charCode >= 48 && event.charCode <= 57;" onkeyup="filterFunc(); filterCheck()"  min="0" max = "9999999"/>
 					<ul id="teamNoList"  style = "display: none">
 					  <li><a id = "868" href="#" onclick = "numberClick(this.id)">868</a></li>
 					  <li><a id = "837" href="#" onclick = "numberClick(this.id)">837</a></li>
