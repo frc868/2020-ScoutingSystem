@@ -2,14 +2,14 @@ var compId = 0;
 var teamNo = 0;
 var matchNo = 0;
 var preload = 0;
-var moveStart = false;
+var moveStart = 0;
 
 var pcAutonBotScore = 0;
 var pcAutonOutScore = 0;
 var pcAutonInScore = 0;
 var pcAutonBotMiss = 0;
 var pcAutonTopMiss = 0;
-var pcAutonInitiationLine = false;
+var pcAutonInitiationLine = 0;
 
 var pcTeleopBotScore = 0;
 var pcTeleopOutScore = 0;
@@ -17,25 +17,25 @@ var pcTeleopInScore = 0;
 var pcTeleopBotMiss = 0;
 var pcTeleopTopMiss = 0;
 
-var revolutionsCheck = false;
-var colorCheck = false;
-var defense = false;
+var revolutionsCheck = 0;
+var colorCheck = 0;
+var defense = 0;
 
-var climb = null;
-var park = false;
+var climb = 0;
+var park = 0;
 var comments = "";
-var generatorLevel = false;
+var generatorLevel = 0;
 var noClimb = 0;
 var yellow;
-var red = false;
-var lostComms = false;
-var disabled = false;
-var fall = false;
+var red = 0;
+var lostComms = 0;
+var disabled = 0;
+var fall = 0;
 var climbPos = 0;
 var comments = "";
 
 
-var auton = true;
+var auton = 1;
 var currentCounters = [];
 var autonCounters = [document.getElementById("auton1"), document.getElementById("auton2"), document.getElementById("auton3"), document.getElementById("auton4"), document.getElementById("auton5")];
 var teleopCounters = [document.getElementById("teleop1"), document.getElementById("teleop2"), document.getElementById("teleop3"), document.getElementById("teleop4"), document.getElementById("teleop5")];
@@ -86,27 +86,27 @@ function setVars() {
 	
 
 	matchNo = document.getElementById("matchNo").value;
-	teamNo = document.getElementById("teamNo").teamNo;
-	park = document.getElementById("ren").checked;
-	climb = document.getElementById("climbS").checked;
-	generatorLevel = document.getElementById("level").checked;
+	teamNo = document.getElementById("teamNo").value;
+	park = (document.getElementById("ren").checked ? 1 : 0);
+	climb = (document.getElementById("climbS").checked ? 1 : 0);
+	generatorLevel = (document.getElementById("level").checked ? 1 : 0);
 	noClimb = document.getElementById("roboClimb").value;
 	climbPos = document.getElementById("generatorPos").value;
 	
-	yellow = document.getElementById("yellowCard").checked;
-	red = document.getElementById("redCard").checked;
-	lostComms = document.getElementById("lostComm").checked;
-	disabled = document.getElementById("disabled").checked;
+	yellow = (document.getElementById("yellowCard").checked ? 1 : 0);
+	red = (document.getElementById("redCard").checked ? 1 : 0);
+	lostComms = (document.getElementById("lostComm").checked ? 1 : 0);
+	disabled = (document.getElementById("disabled").checked ? 1 : 0);
 	
-	revolutionsCheck = document.getElementById("spinNumber").checked;
-	colorCheck = document.getElementById("spinColor").checked;
-	defense = document.getElementById("defense").checked;
-	moveStart = document.getElementById("initiationLine").checked;
-	fall = document.getElementById("fall").checked;
+	revolutionsCheck = (document.getElementById("spinNumber").checked ? 1 : 0);
+	colorCheck = (document.getElementById("spinColor").checked ? 1 : 0);
+	defense = (document.getElementById("defense").checked ? 1 : 0);
+	moveStart = (document.getElementById("initiationLine").checked ? 1 : 0);
+	fall = (document.getElementById("fall").checked ? 1 : 0);
 	
-	comments = document.getElementById("comments").value;
+	comments += document.getElementById("comments").value;
 
-	console.log("pcAutonBotScore" + climbPos);
+	console.log(comments);
 }
 
 //Allows the toggle button to change the midgame tab from tele-op to auton
@@ -371,7 +371,7 @@ function subButton() {
 		document.getElementById('matchCheck').innerHTML = "Did not enter match number!";
 	} else {
 		document.getElementById('matchCheck').innerHTML = "";
-		match = true;
+		match  = true;
 	}
 	
 	if (document.getElementById('teamNo').value == 0) {
@@ -382,9 +382,11 @@ function subButton() {
 		team = true;
 	}
 	
-	if (document.getElementById('sGSlid').style.display == "block") {
-		alert("Make sure to specify where the robot climbed!");
-	}
+	/* if (document.getElementById('sGSlid').style.display == "block") {
+		document.getElementById('climbCheck').innerHTML = "Make sure to move the slider to the position the robot climbed at!";
+	} else {
+		document.getElementById('climbCheck').innerHTML = "";
+	} */
 	
 	if (team & match) {
 		document.getElementById('sub').disabled = false;
@@ -406,9 +408,10 @@ function powerCellCounter3() {
 
 $(document).ready(function() {
 	$('#sub').click(function() {
+		console.log("inside ajax function");
 		$.ajax({
 			url: '../scouting/processing.php',
-			type: 'POST',
+			type: 'GET',
 			data: {
 				pcAutonBotScore_php: pcAutonBotScore,
 				pcAutonOutScore_php: pcAutonOutScore,
@@ -439,10 +442,12 @@ $(document).ready(function() {
 				comments_php: comments
 			},
 			success: function(data) {
-				$('#result').html(data);
+				//$('#result').html(data);
+				console.log("ajax function was a success");
+				location.reload(true);
 			},
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
-				//case error
+				alert("There was an error in submitting the data.");
 			}
 		});
 	});

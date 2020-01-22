@@ -28,8 +28,8 @@
 				<div id="pregame" class="tab-pane fade in active">
 					<h3>Pregame</h3>
 					<p>Match Qualification # Here:</p>
-					<input style="color:black" type="number" class="textbox" id="matchNo" onKeyPress="if(this.value.length==3) onKeyPress="if(this.value._+.) return false;" onKeyUp="" min="0" max = "9999999"/>
-					<br> 
+					<input style="color:black" type="number" class="textbox" id="matchNo" onKeyPress="if(this.value.length==3) return false;" onKeyUp="" min="0" max = "9999999"/>
+					<br>
 					<br>
 					<p>Enter Team # Here:</p>
 					<input style="color:black" type="number" class="textbox" id="teamNo" onKeyPress="if(this.value.length==5) return false;" onkeyup="filterFunc(); filterCheck()"  min="0" max = "9999999"/>
@@ -55,35 +55,24 @@
 				
 				<div id="midgame" class="tab-pane fade">
 					<h3 onclick="setVars()">Midgame</h3>
-					
-					<div onclick="toggleMidgame()" class = "col-sm-4">
-						<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="50" data-width="200" data-on="Tele-Op" data-off="Auton">
-					</div>
-					<br>
-					<br>
-					<!--<div class = "col-sm-4">
-						<div id="autonButtons">
-							<label class="container">
-								<input type="checkbox" id="initiationLine"> Crossing Initiation Line
-								<span class="checkmark"></span>
-							</label>
-							<br></br>
+					<div class = "row">
+						<div onclick="toggleMidgame()" class = "col-sm-4">
+							<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-height="50" data-width="200" data-on="Tele-Op" data-off="Auton">
 						</div>
-						<div id="teleOpButtons">
-							<label class="container">
-								<input type="checkbox" id="spinNumber"> Control Panel Spun 3-5 Times With Precision
-								<span class="checkmark"></span>
-							</label>
-							<label class="container">
-								<input type="checkbox" id="spinColor"> Control Panel Spun to Specified Color
-								<span class="checkmark"></span>
-							</label>
-							<label class="container">
-								<input type="checkbox" id="defense"> Defense was Played
-								<span class="checkmark"></span>
-							</label>
-							<br></br>
-					</div>-->
+						<br>
+						<div class = "col-sm-4">
+							<div id="autonButtons">
+								<label class="container"><input type="checkBox" id="initiationLine"/> Crossing Initiation Line <span class="checkmark"></span> </label>
+								<br></br>
+							</div>
+							<div id="teleOpButtons">
+								<label class="container"><input type="checkBox" id="spinNumber"/> Control Panel Spun 3-5 Times With Precision <span class="checkmark"></span></label>
+								<label class="container"><input type="checkBox" id="spinColor"/> Control Panel Spun to Specified Color <span class="checkmark"></span></label>
+								<label class="container"><input type="checkBox" id="defense"/> Defense was Played <span class="checkmark"></span></label>
+								<br></br>
+							</div>
+						</div>
+					</div>
 					
 					<div class="row container" style = "padding-top: 1em;">
 						<script>
@@ -159,40 +148,20 @@
 							<!-- Midgame Buttons and Checkboxes for AUTON -->
 							<div class="row" id="autonRow" style="padding-top: 1em;">
 								
-								<div class="col-sm-2 lead" id="auton1">
-									0
-								</div>
-								<div class="col-sm-2 lead" id="auton2">
-									0
-								</div>
-								<div class="col-sm-2 lead" id="auton3">
-									0
-								</div>
-								<div class="col-sm-2 lead" id="auton4">
-									0
-								</div>
-								<div class="col-sm-2 lead" id="auton5">
-									0
-								</div>
+								<div class="col-sm-2 lead" id="auton1">0</div>
+								<div class="col-sm-2 lead" id="auton2">0</div>
+								<div class="col-sm-2 lead" id="auton3">0</div>
+								<div class="col-sm-2 lead" id="auton4">0</div>
+								<div class="col-sm-2 lead" id="auton5">0</div>
 							</div>
 							
 							<!-- Midgame Buttons and Checkboxes for TELEOP -->
 							<div class="row" id="teleopRow" style = "padding-top: 1em; display: none">
-								<div class="col-sm-2 lead" id="teleop1">
-									0
-								</div>
-								<div class="col-sm-2 lead" id="teleop2">
-									0
-								</div>
-								<div class="col-sm-2 lead" id="teleop3">
-									0
-								</div>
-								<div class="col-sm-2 lead" id="teleop4">
-									0
-								</div>
-								<div class="col-sm-2 lead" id="teleop5">
-									0
-								</div>
+								<div class="col-sm-2 lead" id="teleop1">0</div>
+								<div class="col-sm-2 lead" id="teleop2">0</div>
+								<div class="col-sm-2 lead" id="teleop3">0</div>
+								<div class="col-sm-2 lead" id="teleop4">0</div>
+								<div class="col-sm-2 lead" id="teleop5">0</div>
 							</div>
 							
 							
@@ -294,7 +263,9 @@
 				<div id="Submit" class="tab-pane fade">
 				<h2 id = "matchCheck" style = "color: red"></h2>
 				<h2 id = "teamCheck" style = "color: red"></h2>
+				<!-- <h2 id = "climbCheck" style = "color: red"></h2> -->
 				<input type="submit" value="Submit" id = "sub" onclick = "setVars()" class = "buttonSubmit"> <br>
+				<div id="result">
 						<p id="para"></p>
 				</div>
 		</div>
