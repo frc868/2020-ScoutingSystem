@@ -3,9 +3,9 @@
 	error_reporting(E_ALL);
 	session_start();
 	$DB_HOST = 'localhost';
-	$DB_USER = 'loginUser';
+	$DB_USER = 'root';
 	$DB_PASS = 'techhounds';
-	$DB_NAME = 'scoutingTest';
+	$DB_NAME = 'scoutingDB';
 	$con = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 	if (mysqli_connect_errno() ) {
 		die ('Failed to connect to MySQL: ' .mysqli_connect_error());
@@ -51,7 +51,7 @@
 	
 	//echo $matchNo. $teamNo. $compId. $sandstormnoOfCargo. $sandstormnoOfHatch. $teleop_noOfCargo. $teleop_noOfHatch. $comments;
 	$sql = "INSERT INTO scoutingData(matchNo, teamNo, pcAutonBotScore, pcAutonOutScore, pcAutonInScore, pcAutonBotMiss, pcAutonTopMiss, pcTeleopBotScore, pcTeleopOutScore, pcTeleopInScore, pcTeleopBotMiss, pcTeleopTopMiss, revolutionsCheck, colorCheck, defense, moveStart, park, climb, generatorLevel, noClimb, climbPos, yellow, red, lostComms, disabled, fall, comments) 
-	VALUES (" . $matchNo . ", '$teamNo', '$pcAutonBotScore', '$pcAutonOutScore', '$pcAutonInScore', '$pcAutonBotMiss', '$pcAutonTopMiss', '$pcTeleopBotScore', '$pcTeleopOutScore', '$pcTeleopInScore', '$pcTeleopBotMiss', '$pcTeleopTopMiss', '$revolutionsCheck', '$colorCheck', '$defense', '$moveStart', '$park', '$climb', '$generatorLevel', '$noClimb', '$climbPos', '$yellow', '$red', '$lostComms', '$disabled', '$fall', '$comments')";
+	VALUES ('$matchNo', '$teamNo', '$pcAutonBotScore', '$pcAutonOutScore', '$pcAutonInScore', '$pcAutonBotMiss', '$pcAutonTopMiss', '$pcTeleopBotScore', '$pcTeleopOutScore', '$pcTeleopInScore', '$pcTeleopBotMiss', '$pcTeleopTopMiss', '$revolutionsCheck', '$colorCheck', '$defense', '$moveStart', '$park', '$climb', '$generatorLevel', '$noClimb', '$climbPos', '$yellow', '$red', '$lostComms', '$disabled', '$fall', '$comments')";
 	
 	
 	//echo "Worked";
